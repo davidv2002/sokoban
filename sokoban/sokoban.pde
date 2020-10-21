@@ -19,6 +19,7 @@ void setup() {
 }
 
 void draw() {
+  println(frameRate);
 }
 
 void mousePressed() {

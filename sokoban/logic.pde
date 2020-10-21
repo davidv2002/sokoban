@@ -1,3 +1,8 @@
+/**
+ black = walls
+ red = player
+ */
+
 void baseLogic() {
   for ( i = 0; i < cellsWide; i++) {
     for ( j = 0; j < cellsTall; j++) {
