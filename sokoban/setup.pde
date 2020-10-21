@@ -10,4 +10,11 @@ void buildMatrix() {
   for ( int i = 0; i < YPositions.length; i++) {
     YPositions[i] = height*((i*1.0)/boxesTall);
   }
+  for ( int i = 0; i < Colors.length; i++) {
+    if (i == 3) {
+      Colors[i] = color(0);
+    } else {
+      Colors[i] = color(255);
+    }
+  }
 }
