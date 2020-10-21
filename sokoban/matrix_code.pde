@@ -19,13 +19,4 @@ void buildMatrix() {
   for (i = 0; i < YPositions.length; i++) {
     YPositions[i] = height*((i*1.0)/boxesTall);
   }
-  for (i = 0; i < Colors.length; i++) {
-    if (i == 3) {
-      Colors[i] = black;
-    } else if ( i == 4) {
-      Colors[i] = red;
-    } else {
-      Colors[i] = color(white);
-    }
-  }
 }
