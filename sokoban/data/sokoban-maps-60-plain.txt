@@ -1,8 +1,8 @@
 X = wall
 . = box goal
 * = box
-@ player
-
+@ = player
+& = box in goal
 
 
 test level
@@ -10,15 +10,14 @@ Size X: 5
 Size Y: 5
 
 
-XXXXX
-X.XXX
+XXX
+X.X
 X*XXX
 X@*.X
 XXXXX
 
 
-*************************************
-Maze: 1
+level 1
 Size X: 22
 Size Y: 11
 

@@ -1,9 +1,9 @@
 // global variables
-int boxesWide = 5, boxesTall = 5;
-float boxWidth, boxHeight;
-float[] XPositions = new float[boxesWide+1];
-float[] YPositions = new float[boxesTall+1];
-color[] Colors = new color[boxesWide*boxesTall];
+int cellsWide = 5, cellsTall = 5;
+float cellWidth, cellHeight;
+float[] XPositions = new float[cellsWide+1];
+float[] YPositions = new float[cellsTall+1];
+color[] Colors = new color[cellsWide*cellsTall];
 
 int i, j;
 // color swap storage ints
