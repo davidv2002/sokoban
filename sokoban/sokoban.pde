@@ -12,10 +12,10 @@ void setup() {
   size(1024, 768);
   population();
   buildMatrix();
+  drawMatrix();
 }
 
 void draw() {
-  drawMatrix();
 }
 
 void mousePressed() {
