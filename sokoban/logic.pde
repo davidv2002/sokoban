@@ -59,5 +59,12 @@ void winCheck() {
       setupLevel();
     }
     break;
+  case 2:
+    if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
   }
 }

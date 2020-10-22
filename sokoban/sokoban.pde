@@ -9,7 +9,7 @@ PImage pic;
 int x, y;
 // color swap storage ints
 int storedColor, storedIndexX, storedIndexY;
-color black, white, brown, red, yellow, darkBrown;
+color black, white, brown, red, yellow;
 
 void setup() {
   size(1024, 768);
@@ -19,6 +19,7 @@ void setup() {
 }
 
 void draw() {
+  goals();
 }
 
 void mousePressed() {

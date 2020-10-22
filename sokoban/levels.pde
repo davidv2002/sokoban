@@ -9,13 +9,13 @@ void level0() {
   storedIndexY = 3;
   // fill the level
   // row 1 
-  Colors[cellsWide+1] = yellow; // box goal
+  Colors[cellsWide+1] = white; // box goal
   // row 2
   Colors[cellsWide*2+1] = brown; // box
   // row 3
   Colors[cellsWide*3+1] = red; // player
   Colors[cellsWide*3+2] = brown; // box
-  Colors[cellsWide*3+3] = yellow; // box goal
+  Colors[cellsWide*3+3] = white; // box goal
 }
 
 void level1() {
@@ -49,7 +49,7 @@ void level1() {
   Colors[cellsWide*5+2] = white;
   Colors[cellsWide*5+3] = white;
   Colors[cellsWide*5+4] = brown; // box
-  Colors[cellsWide*5+5] = yellow; // box goal
+  Colors[cellsWide*5+5] = white; // box goal
 }
 
 void level2() {
@@ -67,7 +67,7 @@ void level2() {
   Colors[cellsWide+4] = white;
   Colors[cellsWide+5] = white;
   // row 2
-  Colors[cellsWide*2+1] = yellow; // box goal
+  Colors[cellsWide*2+1] = white; // box goal
   Colors[cellsWide*2+2] = red; // player
   Colors[cellsWide*2+3] = brown; // box 
   Colors[cellsWide*2+4] = white;
@@ -75,28 +75,28 @@ void level2() {
   // row 3
   Colors[cellsWide*3+3] = white;
   Colors[cellsWide*3+4] = brown; // box
-  Colors[cellsWide*3+5] = yellow; // box goal
+  Colors[cellsWide*3+5] = white; // box goal
   // row 4
-  Colors[cellsWide*4+1] = yellow; // box goal
+  Colors[cellsWide*4+1] = white; // box goal
   Colors[cellsWide*4+4] = brown; // box
   Colors[cellsWide*4+5] = white;
   // row 5
   Colors[cellsWide*5+1] = white;
   Colors[cellsWide*5+3] = white;
-  Colors[cellsWide*5+4] = yellow; // box goal
+  Colors[cellsWide*5+4] = white; // box goal
   Colors[cellsWide*5+5] = white;
   // row 6
   Colors[cellsWide*6+1] = brown; // box
   Colors[cellsWide*6+2] = white;
-  Colors[cellsWide*6+3] = darkBrown; // box in goal
+  Colors[cellsWide*6+3] = brown; // box in goal
   Colors[cellsWide*6+4] = brown; // box
   Colors[cellsWide*6+5] = brown; // box
-  Colors[cellsWide*6+6] = yellow; // box goal
+  Colors[cellsWide*6+6] = white; // box goal
   // row 7
   Colors[cellsWide*7+1] = white;
   Colors[cellsWide*7+2] = white;
   Colors[cellsWide*7+3] = white;
-  Colors[cellsWide*7+4] = yellow; // box goal
+  Colors[cellsWide*7+4] = white; // box goal
   Colors[cellsWide*7+5] = white;
   Colors[cellsWide*7+6] = white;
 }
