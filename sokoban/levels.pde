@@ -115,6 +115,18 @@ void level2() {
   Colors[cellsWide*6+4] = white; // box goal
 }
 
+void level3() {
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = #000000;
+  }
+  // player location
+  storedIndexX = 2;
+  storedIndexY = 2;
+  // fill the level
+}
+
 void level10() {
   // fill with black
   for ( int i = 0; i < Colors.length; i++) 
