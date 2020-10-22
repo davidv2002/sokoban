@@ -8,7 +8,7 @@ color[] Colors = new color[cellsWide*cellsTall];
 int i, j;
 // color swap storage ints
 int storedColor, storedIndexX, storedIndexY;
-color black, white, green, red, blue;
+color black, white, brown, red, blue;
 
 void setup() {
   size(1024, 768);

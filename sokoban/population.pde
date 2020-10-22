@@ -1,17 +1,17 @@
 void population() {
   storedIndexX = 1;
   storedIndexY = 3;
-  black = color(0, 0, 0);
-  red = color(255, 0, 0);
-  green = color(0, 255, 0);
-  blue = color(0, 0, 255);
-  white = color(255, 255, 255);
+  black = #000000;
+  red = #ff0000;
+  brown = #796F48;
+  blue = #0000ff;
+  white = #ffffff;
 }
 
 void loadLevel() {
   Colors[6] = white; // box goal
-  Colors[11] = white; // box
+  Colors[11] = brown; // box
   Colors[16] = red;
-  Colors[17] = white; // box
+  Colors[17] = brown; // box
   Colors[18] = white; // box goal
 }
