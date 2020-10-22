@@ -15,7 +15,7 @@ void setup() {
   size(1024, 768);
   population();
   buildMatrix();
-  testLevel();
+  level2();
   image(pic, 0, 0, width, height);
   drawLevel();
 }
