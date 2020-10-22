@@ -40,3 +40,22 @@ void swap() {
   storedIndexX = x;
   storedIndexY = y;
 }
+
+void winCheck() {
+  switch(levelIndex) {
+  case 0:
+    if (Colors[6] == brown && Colors[18] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  case 1:
+    if (Colors[24] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  }
+}

@@ -1,5 +1,5 @@
 // global variables
-int cellsWide = 5, cellsTall = 5;
+int cellsWide = 5, cellsTall = 5, levelIndex = 0;
 float cellWidth, cellHeight;
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
@@ -15,9 +15,7 @@ void setup() {
   size(1024, 768);
   population();
   buildMatrix();
-  level2();
-  image(pic, 0, 0, width, height);
-  drawLevel();
+  setupLevel();
 }
 
 void draw() {
@@ -25,4 +23,5 @@ void draw() {
 
 void mousePressed() {
   baseLogic();
+  winCheck();
 }

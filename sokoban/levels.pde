@@ -1,4 +1,4 @@
-void level1() {
+void level0() {
   // fill with black
   for ( int i = 0; i < Colors.length; i++) 
   {
@@ -15,7 +15,7 @@ void level1() {
   Colors[18] = white; // box goal
 }
 
-void level2() {
+void level1() {
   // fill with black
   for ( int i = 0; i < Colors.length; i++) 
   {
