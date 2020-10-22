@@ -1,5 +1,5 @@
 # sokoban
-making the game sokoban in processing 3. <br>
+making the game Sokoban in processing 3. <br>
 todo.<br>
 sound efects,<br>
 music,<br>
