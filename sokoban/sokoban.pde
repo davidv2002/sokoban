@@ -1,5 +1,5 @@
 // global variables
-int cellsWide = 9, cellsTall = 9, levelIndex = 2;
+int cellsWide = 9, cellsTall = 9, levelIndex = 0;
 float cellWidth, cellHeight;
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];

@@ -59,6 +59,36 @@ void level2() {
     Colors[i] = #000000;
   }
   // player location
+  storedIndexX = 4;
+  storedIndexY = 4;
+  // fill the level
+  // row 1
+  Colors[cellsWide+4] = white; // box goal
+  // row 2
+  Colors[cellsWide*2+4] = white;
+  // row 3
+  Colors[cellsWide*3+4] = brown; // box
+  Colors[cellsWide*3+5] = white;
+  Colors[cellsWide*3+6] = brown; // box
+  Colors[cellsWide*3+7] = white; // box goal
+  // row 4
+  Colors[cellsWide*4+1] = white; // box goal
+  Colors[cellsWide*4+2] = white;
+  Colors[cellsWide*4+3] = brown; // box
+  Colors[cellsWide*4+4] = red; // player
+  // row 5
+  Colors[cellsWide*5+4] = brown; // box
+  // row 6
+  Colors[cellsWide*6+4] = white; // box goal
+}
+
+void level10() {
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = #000000;
+  }
+  // player location
   storedIndexX = 2;
   storedIndexY = 2;
   // fill the level
