@@ -1,5 +1,6 @@
 # sokoban
-an attempt to make the game sokoban in processing 3
-todo,
-sound efects and music.
-make the interface.
+an attempt to make the game sokoban in processing 3. <br>
+todo.<br>
+sound efects,<br>
+music,<br>
+mute button.
