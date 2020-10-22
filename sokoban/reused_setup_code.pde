@@ -16,5 +16,18 @@ void setupLevel() {
     exit();
   }
   image(pic, 0, 0, width, gameHeight);
+  numMoves = 0;
   drawLevel();
+}
+
+void drawLevel() {
+  for (int i = 0; i < cellsWide; i++) {
+    for (int j = 0; j < cellsTall; j++) {
+      if (Colors[cellsWide*j+i] == #000000) {
+      } else {
+        fill( Colors[cellsWide*j+i]);
+        rect( XPositions[i], YPositions[j], cellWidth, cellHeight);
+      }
+    }
+  }
 }

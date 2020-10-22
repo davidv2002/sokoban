@@ -1,3 +1,36 @@
+void winCheck() {
+  switch(levelIndex) {
+  case 0:
+    if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  case 1:
+    if (Colors[cellsWide*5+5] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  case 2:
+    if (Colors[cellsWide+4] == brown && Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*6+4] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  case 10:
+    if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
+      println("win");
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  }
+}
+
 void level0() {
   // fill with black
   for ( int i = 0; i < Colors.length; i++) 

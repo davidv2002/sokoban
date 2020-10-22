@@ -2,8 +2,6 @@
  black = walls
  red = player
  brown = box
- yellow = box goal
- darkBrown = box in goal
  */
 
 void baseLogic() {
@@ -41,37 +39,93 @@ void swap() {
   // update indexes
   storedIndexX = x;
   storedIndexY = y;
+  numMoves++;
 }
 
-void winCheck() {
-  switch(levelIndex) {
-  case 0:
-    if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
-      println("win");
-      levelIndex++;
-      setupLevel();
+void pushDirection() {
+  if (storedIndexY == y) {
+    if (storedIndexX-x > 0) {
+      if (Colors[cellsWide*y+(x-1)] == #000000) {
+      } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
+      } else {
+        println("push left");
+        pushLeft();
+        swap();
+      }
+    } else {
+      if (Colors[cellsWide*y+x+1] == #000000) {
+      } else if (Colors[cellsWide*y+x+1] == #796F48) {
+      } else {
+        println("push right");
+        pushRight();
+        swap();
+      }
     }
-    break;
-  case 1:
-    if (Colors[cellsWide*5+5] == brown) {
-      println("win");
-      levelIndex++;
-      setupLevel();
+  } else {
+    if (storedIndexY-y > 0) {
+      if (Colors[cellsWide*(y-1)+x] == #000000) {
+      } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
+      } else {
+        println("push up");
+        pushUp();
+        swap();
+      }
+    } else {
+      if (Colors[cellsWide*(y+1)+x] == #000000) {
+      } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
+      } else {
+        println("push down");
+        pushDown();
+        swap();
+      }
     }
-    break;
-  case 2:
-    if (Colors[cellsWide+4] == brown && Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*6+4] == brown) {
-      println("win");
-      levelIndex++;
-      setupLevel();
-    }
-    break;
-  case 10:
-    if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
-      println("win");
-      levelIndex++;
-      setupLevel();
-    }
-    break;
   }
+}
+
+void pushLeft() {
+  // swap colors
+  storedColor = Colors[cellsWide*y+x];
+  Colors[cellsWide*y+x] = Colors[cellsWide*y+(x-1)];
+  Colors[cellsWide*y+(x-1)] = storedColor;
+  // redraw the cells
+  fill( Colors[cellsWide*y+(x-1)]);
+  rect( XPositions[x-1], YPositions[y], cellWidth, cellHeight);
+  fill( Colors[cellsWide*y+x]);
+  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+}
+
+void pushRight() {
+  // swap colors
+  storedColor = Colors[cellsWide*y+x];
+  Colors[cellsWide*y+x] = Colors[cellsWide*y+x+1];
+  Colors[cellsWide*y+x+1] = storedColor;
+  // redraw the cells
+  fill( Colors[cellsWide*y+x+1]);
+  rect( XPositions[x+1], YPositions[y], cellWidth, cellHeight);
+  fill( Colors[cellsWide*y+x]);
+  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+}
+
+void pushUp() {
+  // swap colors
+  storedColor = Colors[cellsWide*y+x];
+  Colors[cellsWide*y+x] = Colors[cellsWide*(y-1)+x];
+  Colors[cellsWide*(y-1)+x] = storedColor;
+  // redraw the cells
+  fill( Colors[cellsWide*(y-1)+x]);
+  rect( XPositions[x], YPositions[y-1], cellWidth, cellHeight);
+  fill( Colors[cellsWide*y+x]);
+  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+}
+
+void pushDown() {
+  // swap colors
+  storedColor = Colors[cellsWide*y+x];
+  Colors[cellsWide*y+x] = Colors[cellsWide*(y+1)+x];
+  Colors[cellsWide*(y+1)+x] = storedColor;
+  // redraw the cells
+  fill( Colors[cellsWide*(y+1)+x]);
+  rect( XPositions[x], YPositions[y+1], cellWidth, cellHeight);
+  fill( Colors[cellsWide*y+x]);
+  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
 }

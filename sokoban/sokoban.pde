@@ -6,11 +6,11 @@ float[] YPositions = new float[cellsTall+1];
 color[] Colors = new color[cellsWide*cellsTall];
 PImage pic;
 PFont buttonFont;
-int x, y;
+int x, y, numMoves;
 // color swap storage ints
 int storedColor, storedIndexX, storedIndexY;
 color black, white, brown, red, yellow;
-String level;
+String level, moves;
 
 void setup() {
   size(1024, 768);
