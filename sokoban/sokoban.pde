@@ -1,5 +1,5 @@
 // global variables
-int cellsWide = 5, cellsTall = 5, levelIndex = 0;
+int cellsWide = 9, cellsTall = 9, levelIndex = 2;
 float cellWidth, cellHeight;
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
@@ -9,7 +9,7 @@ PImage pic;
 int x, y;
 // color swap storage ints
 int storedColor, storedIndexX, storedIndexY;
-color black, white, brown, red, yellow;
+color black, white, brown, red, yellow, darkBrown;
 
 void setup() {
   size(1024, 768);

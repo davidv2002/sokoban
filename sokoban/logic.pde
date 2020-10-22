@@ -3,6 +3,7 @@
  red = player
  brown = box
  yellow = box goal
+ darkBrown = box in goal
  */
 
 void baseLogic() {
@@ -45,14 +46,14 @@ void swap() {
 void winCheck() {
   switch(levelIndex) {
   case 0:
-    if (Colors[6] == brown && Colors[18] == brown) {
+    if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
       println("win");
       levelIndex++;
       setupLevel();
     }
     break;
   case 1:
-    if (Colors[24] == brown) {
+    if (Colors[cellsWide*5+5] == brown) {
       println("win");
       levelIndex++;
       setupLevel();

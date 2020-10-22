@@ -6,6 +6,9 @@ void setupLevel() {
   case 1:
     level1();
     break;
+  case 2:
+    level2();
+    break;
   default:
     exit();
   }
