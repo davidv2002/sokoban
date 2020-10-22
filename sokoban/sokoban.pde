@@ -5,7 +5,7 @@ float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
 color[] Colors = new color[cellsWide*cellsTall];
 
-int i, j;
+int x, y;
 // color swap storage ints
 int storedColor, storedIndexX, storedIndexY;
 color black, white, brown, red, blue;
@@ -19,7 +19,6 @@ void setup() {
 }
 
 void draw() {
-  println(frameRate);
 }
 
 void mousePressed() {

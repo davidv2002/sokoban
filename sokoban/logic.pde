@@ -5,16 +5,16 @@
  */
 
 void baseLogic() {
-  for ( i = 0; i < cellsWide; i++) {
-    for ( j = 0; j < cellsTall; j++) {
-      if (mouseX>XPositions[i] && mouseY>YPositions[j] && mouseX<XPositions[i+1] && mouseY<YPositions[j+1] && abs(storedIndexX-i)+abs(storedIndexY-j) == 1) {
-        switch(Colors[cellsWide*j+i]) {
+  for ( x = 0; x < cellsWide; x++) {
+    for ( y = 0; y < cellsTall; y++) {
+      if (mouseX>XPositions[x] && mouseY>YPositions[y] && mouseX<XPositions[x+1] && mouseY<YPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
+        switch(Colors[cellsWide*y+x]) {
         case #000000: // black
           println("wall");
           break;
         case #796F48: // brown
           println("box");
-          boxPush();
+          pushDirection();
           swap();
           break;
         default:
@@ -31,14 +31,14 @@ void swap() {
   // swap the color of the two cells
   // swap colors
   storedColor = Colors[cellsWide*storedIndexY+storedIndexX];
-  Colors[cellsWide*storedIndexY+storedIndexX] = Colors[cellsWide*j+i];
-  Colors[cellsWide*j+i] = storedColor;
+  Colors[cellsWide*storedIndexY+storedIndexX] = Colors[cellsWide*y+x];
+  Colors[cellsWide*y+x] = storedColor;
   // redraw first clicked cell
   fill( Colors[cellsWide*storedIndexY+storedIndexX]);
   rect( XPositions[storedIndexX], YPositions[storedIndexY], cellWidth, cellHeight);
   // redraw second clicked cell
-  fill( Colors[cellsWide*j+i]);
-  rect( XPositions[i], YPositions[j], cellWidth, cellHeight);
-  storedIndexX = i;
-  storedIndexY = j;
+  fill( Colors[cellsWide*y+x]);
+  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+  storedIndexX = x;
+  storedIndexY = y;
 }
