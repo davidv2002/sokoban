@@ -15,6 +15,6 @@ void setupLevel() {
   default:
     exit();
   }
-  image(pic, 0, 0, width, height);
+  image(pic, 0, 0, width, gameHeight);
   drawLevel();
 }
