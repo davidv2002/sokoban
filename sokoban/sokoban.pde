@@ -4,6 +4,7 @@ float cellWidth, cellHeight;
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
 color[] Colors = new color[cellsWide*cellsTall];
+PImage pic;
 
 int x, y;
 // color swap storage ints
@@ -14,8 +15,9 @@ void setup() {
   size(1024, 768);
   population();
   buildMatrix();
-  loadLevel();
-  drawMatrix();
+  testLevel();
+  image(pic, 0, 0, width, height);
+  drawLevel();
 }
 
 void draw() {

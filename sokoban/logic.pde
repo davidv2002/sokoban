@@ -9,7 +9,7 @@ void baseLogic() {
     for ( y = 0; y < cellsTall; y++) {
       if (mouseX>XPositions[x] && mouseY>YPositions[y] && mouseX<XPositions[x+1] && mouseY<YPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
         switch(Colors[cellsWide*y+x]) {
-        case 000000: // black
+        case #000000: // black
           println("wall");
           break;
         case #796F48: // brown
