@@ -8,11 +8,11 @@ void level0() {
   storedIndexX = 1;
   storedIndexY = 3;
   // fill the level
-  Colors[6] = white; // box goal
+  Colors[6] = yellow; // box goal
   Colors[11] = brown; // box
   Colors[16] = red;
   Colors[17] = brown; // box
-  Colors[18] = white; // box goal
+  Colors[18] = yellow; // box goal
 }
 
 void level1() {
@@ -41,5 +41,5 @@ void level1() {
   Colors[21] = white;
   Colors[22] = white;
   Colors[23] = brown; // box
-  Colors[24] = white; // box goal
+  Colors[24] = yellow; // box goal
 }

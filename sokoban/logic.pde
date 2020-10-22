@@ -2,6 +2,7 @@
  black = walls
  red = player
  brown = box
+ yellow = box goal
  */
 
 void baseLogic() {
