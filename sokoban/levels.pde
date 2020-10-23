@@ -54,7 +54,7 @@ void winCheck() {
     }
     break;
   case 9:
-    if (goal9 == true) {
+    if (win9 == true) {
       levelIndex++;
       setupLevel();
     }
