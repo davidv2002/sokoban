@@ -15,6 +15,9 @@ void setupLevel() {
   case 4:
     level4();
     break;
+  case 5:
+    level5();
+    break;
   case 10:
     level10();
     break;
