@@ -41,6 +41,12 @@ void winCheck() {
       setupLevel();
     }
     break;
+  case 7:
+    if (Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+4] == brown) {
+      levelIndex++;
+      setupLevel();
+    }
+    break;
   case 10:
     if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
       levelIndex++;
@@ -294,6 +300,38 @@ void level6() {
   Colors[cellsWide*6+5] = white;
   Colors[cellsWide*6+6] = white;
   Colors[cellsWide*6+7] = red; // player
+}
+
+void level7() {
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = #000000;
+  }
+  // player location
+  storedIndexX = 5;
+  storedIndexY = 3;
+  // fill the level
+  // row 1
+  Colors[cellsWide+1] = white;
+  Colors[cellsWide+2] = white;
+  Colors[cellsWide+3] = white;
+  Colors[cellsWide+4] = white;
+  Colors[cellsWide+5] = white;
+  // row 2
+  Colors[cellsWide*2+1] = white;
+  Colors[cellsWide*2+3] = white;
+  Colors[cellsWide*2+5] = white;
+  // row 3
+  Colors[cellsWide*3+1] = white; // box goal
+  Colors[cellsWide*3+2] = white;
+  Colors[cellsWide*3+3] = brown; // box
+  Colors[cellsWide*3+4] = brown; // box in goal
+  Colors[cellsWide*3+5] = red; // player
+  // row 4
+  Colors[cellsWide*4+1] = white;
+  Colors[cellsWide*4+2] = white;
+  Colors[cellsWide*4+3] = white;
 }
 
 void level10() {

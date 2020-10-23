@@ -21,6 +21,9 @@ void goals() {
   case 6:
     goal6();
     break;
+  case 7:
+    goal7();
+    break;
   case 10:
     goal10();
     break;
@@ -71,6 +74,12 @@ void goal6() {
   fill(yellow);
   ellipse(XPositions[6]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
+void goal7() {
+  fill(yellow);
+  ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal10() {

@@ -1,5 +1,5 @@
 // global variables
-int cellsWide = 9, cellsTall = 9, levelIndex = 6, x, y, numMoves, numPush, storedColor, storedIndexX, storedIndexY;
+int cellsWide = 9, cellsTall = 9, levelIndex = 7, x, y, numMoves, numPush, storedColor, storedIndexX, storedIndexY;
 float cellWidth, cellHeight, heightOffset, gameHeight;
 color[] Colors = new color[cellsWide*cellsTall];
 float[] XPositions = new float[cellsWide+1];
