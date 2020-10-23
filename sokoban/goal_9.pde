@@ -1,5 +1,5 @@
 void goal9() {
-  win9 = (r1 && r2 && r3 && r4 && r5 && r6);
+  win9 = (r1 && r2 && r3 && r4 && r5 && r6 && r7);
   fill(yellow);
   // row 1
   r1 = (Colors[cellsWide*1+30] == brown);
@@ -101,4 +101,8 @@ void goal9() {
   ellipse(XPositionsBig[41]+cellWidthBig/2, YPositionsBig[6]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
   ellipse(XPositionsBig[42]+cellWidthBig/2, YPositionsBig[6]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
   ellipse(XPositionsBig[43]+cellWidthBig/2, YPositionsBig[6]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  // row 7
+  r7 = (Colors[cellsWide*7+15] == brown && Colors[cellsWide*7+19] == brown);
+  ellipse(XPositionsBig[15]+cellWidthBig/2, YPositionsBig[7]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[19]+cellWidthBig/2, YPositionsBig[7]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
 }
