@@ -1,4 +1,4 @@
-void panal() {
+void panel() {
   interfacePop();
   fill(white);
   square(0, gameHeight, heightOffset);

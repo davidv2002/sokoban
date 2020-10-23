@@ -1,16 +1,13 @@
 // global variables
-int cellsWide = 9, cellsTall = 9, levelIndex = 0;
+int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, storedColor, storedIndexX, storedIndexY;
 float cellWidth, cellHeight, heightOffset, gameHeight;
+color[] Colors = new color[cellsWide*cellsTall];
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
-color[] Colors = new color[cellsWide*cellsTall];
-PImage pic;
-PFont buttonFont;
-int x, y, numMoves;
-// color swap storage ints
-int storedColor, storedIndexX, storedIndexY;
 color black, white, brown, red, yellow;
 String level, moves;
+PFont buttonFont;
+PImage pic;
 
 void setup() {
   size(1024, 768);
@@ -21,7 +18,7 @@ void setup() {
 
 void draw() {
   goals();
-  panal();
+  panel();
 }
 
 void mousePressed() {
