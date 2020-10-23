@@ -53,6 +53,12 @@ void winCheck() {
       setupLevel();
     }
     break;
+  case 9:
+    if (goal9 == true) {
+      levelIndex++;
+      setupLevel();
+    }
+    break;
   }
 }
 

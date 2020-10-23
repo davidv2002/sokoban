@@ -27,6 +27,9 @@ void goals() {
   case 8:
     goal8();
     break;
+  case 9:
+    goal9();
+    break;
   }
 }
 
