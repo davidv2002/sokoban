@@ -48,7 +48,6 @@ void pushDirection() {
       if (Colors[cellsWide*y+(x-1)] == #000000) {
       } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
       } else {
-        println("push left");
         pushLeft();
         swap();
       }
@@ -56,7 +55,6 @@ void pushDirection() {
       if (Colors[cellsWide*y+x+1] == #000000) {
       } else if (Colors[cellsWide*y+x+1] == #796F48) {
       } else {
-        println("push right");
         pushRight();
         swap();
       }
@@ -66,7 +64,6 @@ void pushDirection() {
       if (Colors[cellsWide*(y-1)+x] == #000000) {
       } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
       } else {
-        println("push up");
         pushUp();
         swap();
       }
@@ -74,7 +71,6 @@ void pushDirection() {
       if (Colors[cellsWide*(y+1)+x] == #000000) {
       } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
       } else {
-        println("push down");
         pushDown();
         swap();
       }
