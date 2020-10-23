@@ -8,6 +8,7 @@ color black, white, brown, red, yellow;
 String level, moves;
 PFont buttonFont;
 PImage pic;
+boolean quitTest, restartTest;
 
 void setup() {
   size(1024, 768);
@@ -22,6 +23,10 @@ void draw() {
 }
 
 void mousePressed() {
-  baseLogic();
+  if (mouseX < gameHeight) {
+    baseLogic();
+  } else {
+    panelClick();
+  }
   winCheck();
 }

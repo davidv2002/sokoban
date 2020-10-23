@@ -24,7 +24,9 @@ void buildMatrix() {
   }
 }
 
-void interfacePop() {
+void panelPopulation() {
   level = "level\n"+(levelIndex+1);
   moves = "moves\n"+numMoves;
+  quitTest = (pmouseX > width-heightOffset);
+  restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
 }
