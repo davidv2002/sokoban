@@ -34,7 +34,7 @@ void level9() {
   ColorsBig[cellsWideBig*1+26] = white;
   ColorsBig[cellsWideBig*1+27] = white;
   ColorsBig[cellsWideBig*1+29] = white;
-  ColorsBig[cellsWideBig*1+30] = white; // box goal
+  ColorsBig[cellsWideBig*1+30] = white;
   ColorsBig[cellsWideBig*1+31] = white;
   ColorsBig[cellsWideBig*1+33] = white;
   ColorsBig[cellsWideBig*1+34] = white;
@@ -46,4 +46,5 @@ void level9() {
   ColorsBig[cellsWideBig*1+41] = white;
   ColorsBig[cellsWideBig*1+42] = white;
   ColorsBig[cellsWideBig*1+43] = white;
+  // row 2
 }
