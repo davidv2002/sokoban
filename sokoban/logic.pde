@@ -10,14 +10,11 @@ void baseLogic() {
       if (pmouseX>XPositions[x] && pmouseY>YPositions[y] && pmouseX<XPositions[x+1] && pmouseY<YPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
         switch(Colors[cellsWide*y+x]) {
         case #000000: // black
-          println("wall");
           break;
         case #796F48: // brown
-          println("box");
           pushDirection();
           break;
         default:
-          println("swap");
           swap();
           break;
         }
@@ -49,6 +46,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
       } else {
         pushLeft();
+        numPush++;
         swap();
       }
     } else {
@@ -56,6 +54,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*y+x+1] == #796F48) {
       } else {
         pushRight();
+        numPush++;
         swap();
       }
     }
@@ -65,6 +64,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
       } else {
         pushUp();
+        numPush++;
         swap();
       }
     } else {
@@ -72,6 +72,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
       } else {
         pushDown();
+        numPush++;
         swap();
       }
     }

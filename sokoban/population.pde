@@ -27,6 +27,7 @@ void buildMatrix() {
 void panelPopulation() {
   level = "level\n"+(levelIndex+1);
   moves = "moves\n"+numMoves;
+  pushes = "pushes\n"+numPush;
   quitTest = (pmouseX > width-heightOffset);
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
 }

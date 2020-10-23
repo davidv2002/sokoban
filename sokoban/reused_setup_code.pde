@@ -18,6 +18,9 @@ void setupLevel() {
   case 5:
     level5();
     break;
+  case 6:
+    level6();
+    break;
   case 10:
     level10();
     break;
@@ -26,6 +29,7 @@ void setupLevel() {
   }
   image(pic, 0, 0, width, gameHeight);
   numMoves = 0;
+  numPush = 0;
   drawLevel();
 }
 
