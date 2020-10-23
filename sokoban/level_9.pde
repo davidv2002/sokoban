@@ -5,15 +5,45 @@ void level9() {
     ColorsBig[i] = #000000;
   }
   // player location
-  storedIndexX = 1;
-  storedIndexY = 3;
+  storedIndexX = 0;
+  storedIndexY = 0;
   // fill the level
   // row 1 
-  ColorsBig[cellsWideBig+1] = white; // box goal
-  // row 2
-  ColorsBig[cellsWideBig*2+1] = brown; // box
-  // row 3
-  ColorsBig[cellsWideBig*3+1] = red; // player
-  ColorsBig[cellsWideBig*3+2] = brown; // box
-  ColorsBig[cellsWideBig*3+3] = white; // box goal
+  ColorsBig[cellsWideBig*1+1] = white;
+  ColorsBig[cellsWideBig*1+2] = white;
+  ColorsBig[cellsWideBig*1+3] = white;
+  ColorsBig[cellsWideBig*1+5] = white;
+  ColorsBig[cellsWideBig*1+7] = white;
+  ColorsBig[cellsWideBig*1+8] = white;
+  ColorsBig[cellsWideBig*1+9] = white;
+  ColorsBig[cellsWideBig*1+11] = white;
+  ColorsBig[cellsWideBig*1+12] = white;
+  ColorsBig[cellsWideBig*1+13] = white;
+  ColorsBig[cellsWideBig*1+14] = white;
+  ColorsBig[cellsWideBig*1+15] = white;
+  ColorsBig[cellsWideBig*1+16] = white;
+  ColorsBig[cellsWideBig*1+17] = white;
+  ColorsBig[cellsWideBig*1+18] = white;
+  ColorsBig[cellsWideBig*1+19] = white;
+  ColorsBig[cellsWideBig*1+20] = white;
+  ColorsBig[cellsWideBig*1+21] = white;
+  ColorsBig[cellsWideBig*1+22] = white;
+  ColorsBig[cellsWideBig*1+23] = white;
+  ColorsBig[cellsWideBig*1+24] = white;
+  ColorsBig[cellsWideBig*1+25] = white;
+  ColorsBig[cellsWideBig*1+26] = white;
+  ColorsBig[cellsWideBig*1+27] = white;
+  ColorsBig[cellsWideBig*1+29] = white;
+  ColorsBig[cellsWideBig*1+30] = white; // box goal
+  ColorsBig[cellsWideBig*1+31] = white;
+  ColorsBig[cellsWideBig*1+33] = white;
+  ColorsBig[cellsWideBig*1+34] = white;
+  ColorsBig[cellsWideBig*1+35] = white;
+  ColorsBig[cellsWideBig*1+37] = white;
+  ColorsBig[cellsWideBig*1+38] = white;
+  ColorsBig[cellsWideBig*1+39] = white;
+  ColorsBig[cellsWideBig*1+40] = white;
+  ColorsBig[cellsWideBig*1+41] = white;
+  ColorsBig[cellsWideBig*1+42] = white;
+  ColorsBig[cellsWideBig*1+43] = white;
 }

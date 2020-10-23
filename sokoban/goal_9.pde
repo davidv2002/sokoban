@@ -1,6 +1,6 @@
 void goal9() {
-  goal9 = false;
+  goal9 = (r1);
+  r1 = (Colors[cellsWide*1+30] == brown);
   fill(yellow);
-  ellipse(XPositionsBig[1]+cellWidthBig/2, YPositionsBig[1]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
-  ellipse(XPositionsBig[3]+cellWidthBig/2, YPositionsBig[3]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[30]+cellWidthBig/2, YPositionsBig[1]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
 }

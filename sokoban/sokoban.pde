@@ -11,11 +11,11 @@ color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest, goal9;
+boolean quitTest, restartTest, goal9, r1, r2;
 
 void setup() {
-  //size(1024, 768);
-  fullScreen();
+  size(1024, 768);
+  //fullScreen();
   population();
   buildMatrix();
   buildMatrixBig();
