@@ -1,7 +1,7 @@
 # = wall
 $ = box not in goal
-& = box in goal
-$ = goal
+* = box in goal
+. = goal
 + = player in goal
 
 46 wide

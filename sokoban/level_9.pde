@@ -5,13 +5,14 @@ void level9() {
     ColorsBig[i] = #000000;
   }
   // player location
-  storedIndexX = 0;
-  storedIndexY = 0;
+  storedIndexX = 4;
+  storedIndexY = 5;
   // fill the level
   // row 1 
   ColorsBig[cellsWideBig*1+1] = white;
   ColorsBig[cellsWideBig*1+2] = white;
   ColorsBig[cellsWideBig*1+3] = white;
+  ColorsBig[cellsWideBig*1+4] = white;
   ColorsBig[cellsWideBig*1+5] = white;
   ColorsBig[cellsWideBig*1+7] = white;
   ColorsBig[cellsWideBig*1+8] = white;
@@ -47,4 +48,42 @@ void level9() {
   ColorsBig[cellsWideBig*1+42] = white;
   ColorsBig[cellsWideBig*1+43] = white;
   // row 2
+  ColorsBig[cellsWideBig*2+1] = white;
+  ColorsBig[cellsWideBig*2+2] = brown;
+  ColorsBig[cellsWideBig*2+3] = brown;
+  ColorsBig[cellsWideBig*2+4] = brown;
+  ColorsBig[cellsWideBig*2+5] = white;
+  ColorsBig[cellsWideBig*2+7] = white;
+  ColorsBig[cellsWideBig*2+9] = white;
+  ColorsBig[cellsWideBig*2+11] = white;
+  ColorsBig[cellsWideBig*2+12] = brown;
+  ColorsBig[cellsWideBig*2+13] = brown;
+  ColorsBig[cellsWideBig*2+14] = brown;
+  ColorsBig[cellsWideBig*2+15] = brown;
+  ColorsBig[cellsWideBig*2+16] = brown;
+  ColorsBig[cellsWideBig*2+17] = brown;
+  ColorsBig[cellsWideBig*2+18] = brown;
+  ColorsBig[cellsWideBig*2+19] = brown;
+  ColorsBig[cellsWideBig*2+20] = brown;
+  ColorsBig[cellsWideBig*2+21] = brown;
+  ColorsBig[cellsWideBig*2+22] = brown;
+  ColorsBig[cellsWideBig*2+23] = brown;
+  ColorsBig[cellsWideBig*2+24] = brown;
+  ColorsBig[cellsWideBig*2+25] = brown;
+  ColorsBig[cellsWideBig*2+26] = brown;
+  ColorsBig[cellsWideBig*2+27] = white;
+  ColorsBig[cellsWideBig*2+29] = white;
+  ColorsBig[cellsWideBig*2+30] = brown;
+  ColorsBig[cellsWideBig*2+31] = white;
+  ColorsBig[cellsWideBig*2+32] = white;
+  ColorsBig[cellsWideBig*2+33] = white;
+  ColorsBig[cellsWideBig*2+34] = brown;
+  ColorsBig[cellsWideBig*2+35] = white;
+  ColorsBig[cellsWideBig*2+37] = white;
+  ColorsBig[cellsWideBig*2+38] = brown;
+  ColorsBig[cellsWideBig*2+39] = brown;
+  ColorsBig[cellsWideBig*2+40] = brown;
+  ColorsBig[cellsWideBig*2+41] = brown;
+  ColorsBig[cellsWideBig*2+42] = white;
+  ColorsBig[cellsWideBig*2+43] = brown;
 }
