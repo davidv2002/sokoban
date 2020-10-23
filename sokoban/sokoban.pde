@@ -11,7 +11,7 @@ color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest, goal9, r1, r2, r3, r4;
+boolean quitTest, restartTest, goal9, r1, r2, r3, r4, r5;
 
 void setup() {
   size(1024, 768);
