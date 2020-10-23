@@ -1,0 +1,7 @@
+X = wall
+* = box not in goal
+& = box in goal
+$ = goal
+@ = player
+
+
