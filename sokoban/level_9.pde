@@ -2,7 +2,7 @@ void level9() {
   // fill with black
   for ( int i = 0; i < ColorsBig.length; i++) 
   {
-    ColorsBig[i] = #000000;
+    ColorsBig[i] = #ff0000;
   }
   // player location
   storedIndexX = 4;
