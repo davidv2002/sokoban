@@ -98,6 +98,14 @@ void goal8() {
 
 void goal9() {
   fill(yellow);
-  ellipse(XPositions[1]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[2]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
 }

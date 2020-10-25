@@ -25,7 +25,7 @@ void draw() {
 
 void mousePressed() {
   if (pmouseY < gameHeight) {
-      baseLogic();
+    baseLogic();
   } else {
     panelClick();
   }
