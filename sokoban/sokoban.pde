@@ -8,7 +8,7 @@ color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest, nextTest, lastTest;
+boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 void setup() {
   orientation(LANDSCAPE);
@@ -16,6 +16,7 @@ void setup() {
   fullScreen();
   population();
   panelPopulation();
+  soundPopulation();
   buildMatrix();
   setupLevel();
 }

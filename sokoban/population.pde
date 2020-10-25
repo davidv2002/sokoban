@@ -32,4 +32,5 @@ void panelPopulation() {
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
   nextTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
   lastTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
+  muteTest = (pmouseX > width-heightOffset*3.5 && pmouseX < width-heightOffset*2.5);
 }
