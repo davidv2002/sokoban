@@ -151,4 +151,18 @@ void goal9() {
   ellipse(XPositionsBig[7]+cellWidthBig/2, YPositionsBig[11]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
   ellipse(XPositionsBig[26]+cellWidthBig/2, YPositionsBig[11]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
   ellipse(XPositionsBig[31]+cellWidthBig/2, YPositionsBig[11]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  // row 12
+  r12 = (ColorsBig[cellsWideBig*12+4] == brown && ColorsBig[cellsWideBig*12+6] == brown  && ColorsBig[cellsWideBig*12+26]
+    == brown && ColorsBig[cellsWideBig*12+29] == brown && ColorsBig[cellsWideBig*12+31] == brown && ColorsBig[cellsWideBig*12+33]
+    == brown && ColorsBig[cellsWideBig*12+39] == brown && ColorsBig[cellsWideBig*12+41] == brown && ColorsBig[cellsWideBig*12+43]
+    == brown);
+  ellipse(XPositionsBig[4]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[6]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[26]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[29]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[31]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[33]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[39]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[41]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
+  ellipse(XPositionsBig[43]+cellWidthBig/2, YPositionsBig[12]+cellHeightBig/2, cellWidthBig/2, cellHeightBig/2);
 }
