@@ -20,6 +20,7 @@ void soundPopulation() {
   mute = true;
   song();
 }
+
 void song() {
   if (mute == true) {
     song1.loop();

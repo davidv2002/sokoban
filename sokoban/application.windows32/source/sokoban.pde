@@ -11,9 +11,7 @@ PImage pic;
 boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 void setup() {
-  orientation(LANDSCAPE);
-  //size(1024, 768);
-  fullScreen();
+  size(1024, 768);
   population();
   panelPopulation();
   soundPopulation();
@@ -34,4 +32,10 @@ void mousePressed() {
     panelClick();
   }
   winCheck();
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    dPad();
+  }
 }

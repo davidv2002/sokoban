@@ -34,8 +34,6 @@ PImage pic;
 boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 public void setup() {
-  orientation(LANDSCAPE);
-  //size(1024, 768);
   
   population();
   panelPopulation();
@@ -57,6 +55,50 @@ public void mousePressed() {
     panelClick();
   }
   winCheck();
+}
+
+public void keyPressed() {
+  if (key == CODED) {
+    dPad();
+  }
+}
+public void dPad() {
+  switch(keyCode) {
+  case UP:
+    x =storedIndexX;
+    y = storedIndexY-1;
+    dPadLogic();
+    break;
+  case DOWN:
+    x =storedIndexX;
+    y = storedIndexY+1;
+    dPadLogic();
+    break;
+  case LEFT:
+    x =storedIndexX-1;
+    y = storedIndexY;
+    dPadLogic();
+    break;
+  case RIGHT:
+    x =storedIndexX+1;
+    y = storedIndexY;
+    dPadLogic();
+    break;
+  }
+}
+
+public void dPadLogic() {
+  switch(Colors[cellsWide*y+x]) {
+  case 0xff000000: // black
+    wallSound();
+    break;
+  case 0xff796F48: // brown
+    pushDirection();
+    break;
+  default:
+    swap();
+    break;
+  }
 }
 public void goals() {
   switch(levelIndex) {
@@ -746,25 +788,6 @@ public void pushDown() {
   fill( Colors[cellsWide*y+x]);
   rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
 }
-/**
- i do not know how this next bit works, i found it on the  Processing Forum and it works
- what it does is hide the menu bar in android. do not ask me how it does that
- */
-/*
-import android.os.Bundle; 
-import android.view.WindowManager;
-import android.view.*;
-
-void onCreate(Bundle bundle) { 
-  super.onCreate(bundle);
-  View decorView = getActivity().getWindow().getDecorView();
-  decorView.setSystemUiVisibility(0);
-  int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-    | View.SYSTEM_UI_FLAG_FULLSCREEN;
-  decorView.setSystemUiVisibility(uiOptions);
-}
-*/
-// end of bit that i do not know about
 public void panel() {
   fill(white);
   square(0, gameHeight, heightOffset);
@@ -927,6 +950,7 @@ public void soundPopulation() {
   mute = true;
   song();
 }
+
 public void song() {
   if (mute == true) {
     song1.loop();
@@ -961,7 +985,7 @@ public void winSound() {
     song4.rewind();
   }
 }
-  public void settings() {  fullScreen(); }
+  public void settings() {  size(1024, 768); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "sokoban" };
     if (passedArgs != null) {
