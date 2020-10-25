@@ -61,6 +61,7 @@ public void keyPressed() {
   if (key == CODED) {
     dPad();
   }
+  winCheck();
 }
 public void dPad() {
   switch(keyCode) {
@@ -100,6 +101,7 @@ public void dPadLogic() {
     break;
   }
 }
+
 public void goals() {
   switch(levelIndex) {
   case 0:

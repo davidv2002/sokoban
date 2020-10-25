@@ -38,4 +38,5 @@ void keyPressed() {
   if (key == CODED) {
     dPad();
   }
+  winCheck();
 }
