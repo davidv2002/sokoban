@@ -8,10 +8,11 @@ color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest;
+boolean quitTest, restartTest, nextTest, lastTest;
 
 void setup() {
   size(1024, 768);
+  //fullScreen();
   population();
   buildMatrix();
   setupLevel();

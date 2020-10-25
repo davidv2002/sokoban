@@ -24,10 +24,11 @@ int black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest;
+boolean quitTest, restartTest, nextTest, lastTest;
 
 public void setup() {
   
+  //fullScreen();
   population();
   buildMatrix();
   setupLevel();
@@ -74,6 +75,9 @@ public void goals() {
     break;
   case 8:
     goal8();
+    break;
+  case 9:
+    goal9();
     break;
   }
 }
@@ -140,6 +144,20 @@ public void goal8() {
   ellipse(XPositions[6]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[4]+cellWidth/2, YPositions[7]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
+
+public void goal9() {
+  fill(yellow);
+  ellipse(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[2]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
 public void winCheck() {
   switch(levelIndex) {
   case 0:
@@ -191,6 +209,12 @@ public void winCheck() {
     break;
   case 8:
     if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
+      levelIndex++;
+      setupLevel();
+    }
+    break;
+  case 9:
+    if (Colors[cellsWide*2+2] == brown && Colors[cellsWide*2+3] == brown && Colors[cellsWide*2+4] == brown && Colors[cellsWide*2+6] == brown && Colors[cellsWide*3+2] == brown && Colors[cellsWide*3+3] == brown && Colors[cellsWide*3+4] == brown && Colors[cellsWide*4+3] == brown && Colors[cellsWide*4+4] == brown && Colors[cellsWide*4+6] == brown) {
       levelIndex++;
       setupLevel();
     }
@@ -524,6 +548,56 @@ public void level8() {
   Colors[cellsWide*7+5] = white;
   Colors[cellsWide*7+6] = white;
 }
+
+public void level9() {
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = 0xff000000;
+  }
+  // player location
+  storedIndexX = 3;
+  storedIndexY = 6;
+  // fill the level
+  // row 1
+  Colors[cellsWide+1] = white;
+  Colors[cellsWide+2] = white;
+  Colors[cellsWide+3] = white;
+  Colors[cellsWide+4] = white;
+  Colors[cellsWide+5] = white;
+  Colors[cellsWide+6] = white;
+  // row 2
+  Colors[cellsWide*2+1] = white;
+  Colors[cellsWide*2+2] = white; // box goal
+  Colors[cellsWide*2+3] = white; // box goal
+  Colors[cellsWide*2+4] = brown; // box
+  Colors[cellsWide*2+5] = brown; // box in goal
+  Colors[cellsWide*2+6] = white; // box goal
+  // row 3
+  Colors[cellsWide*3+1] = white;
+  Colors[cellsWide*3+2] = white; // box goal
+  Colors[cellsWide*3+3] = brown; // box in goal
+  Colors[cellsWide*3+4] = white; // box goal
+  Colors[cellsWide*3+5] = brown; // box
+  Colors[cellsWide*3+6] = white;
+  // row 4
+  Colors[cellsWide*4+1] = white;
+  Colors[cellsWide*4+2] = white;
+  Colors[cellsWide*4+3] = brown; // box in goal
+  Colors[cellsWide*4+4] = white; // box goal
+  Colors[cellsWide*4+5] = brown; // box
+  Colors[cellsWide*4+6] = white; // box goal
+  // row 5
+  Colors[cellsWide*5+2] = brown; // box
+  Colors[cellsWide*5+3] = brown; // box
+  Colors[cellsWide*5+4] = brown; // box
+  Colors[cellsWide*5+5] = brown; // box
+  Colors[cellsWide*5+6] = white;
+  // row 6
+  Colors[cellsWide*6+2] = white;
+  Colors[cellsWide*6+3] = red; // player
+  Colors[cellsWide*6+4] = white;
+}
 /**
  black = walls
  red = player
@@ -659,6 +733,8 @@ public void panel() {
   square(heightOffset, gameHeight, heightOffset);
   square(heightOffset*2, gameHeight, heightOffset);
 
+  square(width-heightOffset*2.5f, gameHeight, heightOffset/2);
+  square(width-heightOffset*2.5f, gameHeight+heightOffset/2, heightOffset/2);
   square(width-heightOffset*2, gameHeight, heightOffset);
   square(width-heightOffset, gameHeight, heightOffset);
 
@@ -668,13 +744,21 @@ public void panel() {
   text(level, 0, gameHeight, heightOffset, heightOffset);
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
-
   text("restart level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
   text("quit playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
+  textFont(buttonFont, height/30);
+  text("next level", width-heightOffset*2.5f, gameHeight, heightOffset/2, heightOffset/2);
+  text("last level", width-heightOffset*2.5f, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
 }
 
 public void panelClick() {
   if ( restartTest == true) {
+    setupLevel();
+  } else if ( nextTest == true) {
+    levelIndex++;
+    setupLevel();
+  } else if ( lastTest == true) {
+    levelIndex--;
     setupLevel();
   } else if ( quitTest == true) {
     exit();
@@ -712,46 +796,58 @@ public void panelPopulation() {
   pushes = "pushes\n"+numPush;
   quitTest = (pmouseX > width-heightOffset);
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
+  nextTest = (pmouseX > width-heightOffset*2.5f && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
+  lastTest = (pmouseX > width-heightOffset*2.5f && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
 }
 public void setupLevel() {
   switch(levelIndex) {
   case 0:
     level0();
+    drawLevel();
     break;
   case 1:
     level1();
+    drawLevel();
     break;
   case 2:
     level2();
+    drawLevel();
     break;
   case 3:
     level3();
+    drawLevel();
     break;
   case 4:
     level4();
+    drawLevel();
     break;
   case 5:
     level5();
+    drawLevel();
     break;
   case 6:
     level6();
+    drawLevel();
     break;
   case 7:
     level7();
+    drawLevel();
     break;
   case 8:
     level8();
+    drawLevel();
+    break;
+  case 9:
+    level9();
+    drawLevel();
     break;
   default:
     exit();
   }
-  image(pic, 0, 0, width, gameHeight);
-  numMoves = 0;
-  numPush = 0;
-  drawLevel();
 }
 
 public void drawLevel() {
+  image(pic, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
     for (int j = 0; j < cellsTall; j++) {
       if (Colors[cellsWide*j+i] == 0xff000000) {
@@ -761,6 +857,8 @@ public void drawLevel() {
       }
     }
   }
+  numMoves = 0;
+  numPush = 0;
 }
   public void settings() {  size(1024, 768); }
   static public void main(String[] passedArgs) {
