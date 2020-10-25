@@ -24,12 +24,16 @@ void buildMatrix() {
   }
 }
 
-void panelPopulation() {
+void panalTextPopulation() {
   level = "level\n"+(levelIndex+1);
   moves = "moves\n"+numMoves;
   pushes = "pushes\n"+numPush;
+}
+
+void panelPopulation() {
   quitTest = (pmouseX > width-heightOffset);
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
   nextTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
   lastTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
+  muteTest = (pmouseX > width-heightOffset*3.5 && pmouseX < width-heightOffset*2.5);
 }

@@ -3,6 +3,13 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import ddf.minim.*; 
+import ddf.minim.analysis.*; 
+import ddf.minim.effects.*; 
+import ddf.minim.signals.*; 
+import ddf.minim.spi.*; 
+import ddf.minim.ugens.*; 
+
 import java.util.HashMap; 
 import java.util.ArrayList; 
 import java.io.File; 
@@ -24,17 +31,21 @@ int black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest, nextTest, lastTest;
+boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 public void setup() {
+  orientation(LANDSCAPE);
+  //size(1024, 768);
   
-  //fullScreen();
   population();
+  panelPopulation();
+  soundPopulation();
   buildMatrix();
   setupLevel();
 }
 
 public void draw() {
+  panalTextPopulation();
   goals();
   panel();
 }
@@ -158,65 +169,61 @@ public void goal9() {
   ellipse(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
+public void win() {
+  winSound();
+  levelIndex++;
+  setupLevel();
+}
+
 public void winCheck() {
   switch(levelIndex) {
   case 0:
     if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 1:
     if (Colors[cellsWide*5+5] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 2:
     if (Colors[cellsWide+4] == brown && Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*6+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 3:
     if (Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+7] == brown && Colors[cellsWide*5+7] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 4:
     if ( Colors[cellsWide+3] == brown && Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*5+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
   case 5:
     if (Colors[cellsWide*3+3] == brown && Colors[cellsWide*5+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 6:
     if (Colors[cellsWide*3+6] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 7:
     if (Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 8:
     if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 9:
     if (Colors[cellsWide*2+2] == brown && Colors[cellsWide*2+3] == brown && Colors[cellsWide*2+4] == brown && Colors[cellsWide*2+6] == brown && Colors[cellsWide*3+2] == brown && Colors[cellsWide*3+3] == brown && Colors[cellsWide*3+4] == brown && Colors[cellsWide*4+3] == brown && Colors[cellsWide*4+4] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   }
@@ -610,6 +617,7 @@ public void baseLogic() {
       if (pmouseX>XPositions[x] && pmouseY>YPositions[y] && pmouseX<XPositions[x+1] && pmouseY<YPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
         switch(Colors[cellsWide*y+x]) {
         case 0xff000000: // black
+          wallSound();
           break;
         case 0xff796F48: // brown
           pushDirection();
@@ -643,16 +651,22 @@ public void pushDirection() {
   if (storedIndexY == y) {
     if (storedIndexX-x > 0) {
       if (Colors[cellsWide*y+(x-1)] == 0xff000000) {
+        wallSound();
       } else if (Colors[cellsWide*y+(x-1)] == 0xff796F48) {
+        wallSound();
       } else {
+        pushSound();
         pushLeft();
         numPush++;
         swap();
       }
     } else {
       if (Colors[cellsWide*y+x+1] == 0xff000000) {
+        wallSound();
       } else if (Colors[cellsWide*y+x+1] == 0xff796F48) {
+        wallSound();
       } else {
+        pushSound();
         pushRight();
         numPush++;
         swap();
@@ -661,16 +675,22 @@ public void pushDirection() {
   } else {
     if (storedIndexY-y > 0) {
       if (Colors[cellsWide*(y-1)+x] == 0xff000000) {
+        wallSound();
       } else if (Colors[cellsWide*(y-1)+x] == 0xff796F48) {
+        wallSound();
       } else {
+        pushSound();
         pushUp();
         numPush++;
         swap();
       }
     } else {
       if (Colors[cellsWide*(y+1)+x] == 0xff000000) {
+        wallSound();
       } else if (Colors[cellsWide*(y+1)+x] == 0xff796F48) {
+        wallSound();
       } else {
+        pushSound();
         pushDown();
         numPush++;
         swap();
@@ -726,24 +746,42 @@ public void pushDown() {
   fill( Colors[cellsWide*y+x]);
   rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
 }
+/**
+ i do not know how this next bit works, i found it on the  Processing Forum and it works
+ what it does is hide the menu bar in android. do not ask me how it does that
+ */
+/*
+import android.os.Bundle; 
+import android.view.WindowManager;
+import android.view.*;
+
+void onCreate(Bundle bundle) { 
+  super.onCreate(bundle);
+  View decorView = getActivity().getWindow().getDecorView();
+  decorView.setSystemUiVisibility(0);
+  int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+    | View.SYSTEM_UI_FLAG_FULLSCREEN;
+  decorView.setSystemUiVisibility(uiOptions);
+}
+*/
+// end of bit that i do not know about
 public void panel() {
-  panelPopulation();
   fill(white);
   square(0, gameHeight, heightOffset);
   square(heightOffset, gameHeight, heightOffset);
   square(heightOffset*2, gameHeight, heightOffset);
-
+  square(width-heightOffset*3.5f, gameHeight, heightOffset);
   square(width-heightOffset*2.5f, gameHeight, heightOffset/2);
   square(width-heightOffset*2.5f, gameHeight+heightOffset/2, heightOffset/2);
   square(width-heightOffset*2, gameHeight, heightOffset);
   square(width-heightOffset, gameHeight, heightOffset);
-
   fill(black);
   textAlign (CENTER, CENTER);
   textFont(buttonFont, height/20);
   text(level, 0, gameHeight, heightOffset, heightOffset);
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
+  text("mute", width-heightOffset*3.5f, gameHeight, heightOffset, heightOffset);
   text("restart level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
   text("quit playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
   textFont(buttonFont, height/30);
@@ -752,6 +790,7 @@ public void panel() {
 }
 
 public void panelClick() {
+  panelPopulation();
   if ( restartTest == true) {
     setupLevel();
   } else if ( nextTest == true) {
@@ -760,6 +799,8 @@ public void panelClick() {
   } else if ( lastTest == true) {
     levelIndex--;
     setupLevel();
+  } else if ( muteTest == true) {
+    song();
   } else if ( quitTest == true) {
     exit();
   }
@@ -790,14 +831,18 @@ public void buildMatrix() {
   }
 }
 
-public void panelPopulation() {
+public void panalTextPopulation() {
   level = "level\n"+(levelIndex+1);
   moves = "moves\n"+numMoves;
   pushes = "pushes\n"+numPush;
+}
+
+public void panelPopulation() {
   quitTest = (pmouseX > width-heightOffset);
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
   nextTest = (pmouseX > width-heightOffset*2.5f && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
   lastTest = (pmouseX > width-heightOffset*2.5f && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
+  muteTest = (pmouseX > width-heightOffset*3.5f && pmouseX < width-heightOffset*2.5f);
 }
 public void setupLevel() {
   switch(levelIndex) {
@@ -860,7 +905,63 @@ public void drawLevel() {
   numMoves = 0;
   numPush = 0;
 }
-  public void settings() {  size(1024, 768); }
+
+
+
+
+
+
+
+Minim minim;
+AudioPlayer song1;
+AudioPlayer song2;
+AudioPlayer song3;
+AudioPlayer song4;
+
+public void soundPopulation() {
+  minim = new Minim(this);
+  song1 = minim.loadFile("Beat_Your_Competition.mp3");
+  song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");
+  song3 = minim.loadFile("Slide.mp3");
+  song4 = minim.loadFile("Magic_Chime.mp3");
+  mute = true;
+  song();
+}
+public void song() {
+  if (mute == true) {
+    song1.loop();
+    mute = false;
+  } else {
+    song1.pause();
+    song1.rewind();
+    mute = true;
+  }
+}
+
+public void wallSound() {
+  if (mute == true) {
+  } else {
+    song2.play();
+    song2.rewind();
+  }
+}
+
+public void pushSound() {
+  if (mute == true) {
+  } else {
+    song3.play();
+    song3.rewind();
+  }
+}
+
+public void winSound() {
+  if (mute == true) {
+  } else {
+    song4.play();
+    song4.rewind();
+  }
+}
+  public void settings() {  fullScreen(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "sokoban" };
     if (passedArgs != null) {

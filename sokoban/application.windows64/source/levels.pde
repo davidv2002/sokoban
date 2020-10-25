@@ -1,62 +1,58 @@
+void win() {
+  winSound();
+  levelIndex++;
+  setupLevel();
+}
+
 void winCheck() {
   switch(levelIndex) {
   case 0:
     if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 1:
     if (Colors[cellsWide*5+5] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 2:
     if (Colors[cellsWide+4] == brown && Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*6+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 3:
     if (Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+7] == brown && Colors[cellsWide*5+7] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 4:
     if ( Colors[cellsWide+3] == brown && Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*5+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
   case 5:
     if (Colors[cellsWide*3+3] == brown && Colors[cellsWide*5+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 6:
     if (Colors[cellsWide*3+6] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 7:
     if (Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 8:
     if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 9:
     if (Colors[cellsWide*2+2] == brown && Colors[cellsWide*2+3] == brown && Colors[cellsWide*2+4] == brown && Colors[cellsWide*2+6] == brown && Colors[cellsWide*3+2] == brown && Colors[cellsWide*3+3] == brown && Colors[cellsWide*3+4] == brown && Colors[cellsWide*4+3] == brown && Colors[cellsWide*4+4] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   }

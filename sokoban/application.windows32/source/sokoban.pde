@@ -8,17 +8,21 @@ color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
-boolean quitTest, restartTest, nextTest, lastTest;
+boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 void setup() {
-  size(1024, 768);
-  //fullScreen();
+  orientation(LANDSCAPE);
+  //size(1024, 768);
+  fullScreen();
   population();
+  panelPopulation();
+  soundPopulation();
   buildMatrix();
   setupLevel();
 }
 
 void draw() {
+  panalTextPopulation();
   goals();
   panel();
 }
