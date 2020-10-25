@@ -2,7 +2,7 @@
  i do not know how this next bit works, i found it on the  Processing Forum and it works
  what it does is hide the menu bar in android. do not ask me how it does that
  */
-/*
+ /**
 import android.os.Bundle; 
 import android.view.WindowManager;
 import android.view.*;
