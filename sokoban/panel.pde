@@ -1,5 +1,4 @@
 void panel() {
-  panelPopulation();
   fill(white);
   square(0, gameHeight, heightOffset);
   square(heightOffset, gameHeight, heightOffset);
@@ -24,6 +23,7 @@ void panel() {
 }
 
 void panelClick() {
+  panelPopulation();
   if ( restartTest == true) {
     setupLevel();
   } else if ( nextTest == true) {
