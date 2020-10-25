@@ -48,6 +48,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
         wallSound();
       } else {
+        pushSound();
         pushLeft();
         numPush++;
         swap();
@@ -58,6 +59,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*y+x+1] == #796F48) {
         wallSound();
       } else {
+        pushSound();
         pushRight();
         numPush++;
         swap();
@@ -70,6 +72,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
         wallSound();
       } else {
+        pushSound();
         pushUp();
         numPush++;
         swap();
@@ -80,6 +83,7 @@ void pushDirection() {
       } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
         wallSound();
       } else {
+        pushSound();
         pushDown();
         numPush++;
         swap();

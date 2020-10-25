@@ -8,20 +8,30 @@ import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer song1;
 AudioPlayer song2;
+AudioPlayer song3;
 
 void soundPopulation() {
   minim = new Minim(this);
   song1 = minim.loadFile("Beat_Your_Competition.mp3");
   song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");
+  song3 = minim.loadFile("Slide.mp3");
   mute = true;
-
   song();
 }
+
 void wallSound() {
   if (mute == true) {
   } else {
     song2.play();
     song2.rewind();
+  }
+}
+
+void pushSound() {
+  if (mute == true) {
+  } else {
+    song3.play();
+    song3.rewind();
   }
 }
 
