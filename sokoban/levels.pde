@@ -54,7 +54,7 @@ void winCheck() {
     }
     break;
   case 9:
-    if (win9 == true) {
+    if (Colors[cellsWide*2+1] == brown) {
       levelIndex++;
       setupLevel();
     }
@@ -387,4 +387,21 @@ void level8() {
   Colors[cellsWide*7+4] = white; // box goal
   Colors[cellsWide*7+5] = white;
   Colors[cellsWide*7+6] = white;
+}
+
+void level9() {
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = #000000;
+  }
+  // player location
+  storedIndexX = 2;
+  storedIndexY = 2;
+  // fill the level
+  // row 1
+  Colors[cellsWide+3] = white;
+  Colors[cellsWide+4] = white;
+  Colors[cellsWide+5] = white;
+  // row 2
 }

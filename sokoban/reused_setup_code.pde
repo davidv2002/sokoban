@@ -38,7 +38,7 @@ void setupLevel() {
     break;
   case 9:
     level9();
-    drawLevelBig();
+    drawLevel();
     break;
   default:
     exit();
