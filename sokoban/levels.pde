@@ -59,11 +59,6 @@ void winCheck() {
 }
 
 void level0() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 1;
   storedIndexY = 3;
@@ -79,11 +74,6 @@ void level0() {
 }
 
 void level1() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 1;
   storedIndexY = 1;
@@ -113,11 +103,6 @@ void level1() {
 }
 
 void level2() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 4;
   storedIndexY = 4;
@@ -143,11 +128,6 @@ void level2() {
 }
 
 void level3() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 1;
   storedIndexY = 7;
@@ -187,10 +167,6 @@ void level3() {
 }
 
 void level4() {
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 3;
   storedIndexY = 1;
@@ -224,10 +200,6 @@ void level4() {
 }
 
 void level5() {
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 4;
   storedIndexY = 1;
@@ -257,11 +229,6 @@ void level5() {
 }
 
 void level6() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 7;
   storedIndexY = 6;
@@ -305,11 +272,6 @@ void level6() {
 }
 
 void level7() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 5;
   storedIndexY = 3;
@@ -337,11 +299,6 @@ void level7() {
 }
 
 void level8() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 2;
   storedIndexY = 2;
@@ -386,11 +343,6 @@ void level8() {
 }
 
 void level9() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
   // player location
   storedIndexX = 3;
   storedIndexY = 6;
