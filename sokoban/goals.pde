@@ -1,4 +1,5 @@
 void goals() {
+  fill(yellow);
   switch(levelIndex) {
   case 0:
     goal0();
@@ -34,18 +35,15 @@ void goals() {
 }
 
 void goal0() {
-  fill(yellow);
   ellipse(XPositions[1]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal1() {
-  fill(yellow);
   ellipse(XPositions[5]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal2() {
-  fill(yellow);
   ellipse(XPositions[4]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
@@ -53,14 +51,12 @@ void goal2() {
 }
 
 void goal3() {
-  fill(yellow);
   ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[7]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[7]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal4() {
-  fill(yellow);
   ellipse(XPositions[3]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
@@ -68,25 +64,21 @@ void goal4() {
 }
 
 void goal5() {
-  fill(yellow);
   ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal6() {
-  fill(yellow);
   ellipse(XPositions[6]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal7() {
-  fill(yellow);
   ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void goal8() {
-  fill(yellow);
   ellipse(XPositions[1]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
@@ -97,7 +89,6 @@ void goal8() {
 }
 
 void goal9() {
-  fill(yellow);
   ellipse(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
   ellipse(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
