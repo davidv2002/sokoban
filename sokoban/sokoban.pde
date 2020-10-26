@@ -28,15 +28,15 @@ void draw() {
 void mousePressed() {
   if (pmouseY < gameHeight) {
     baseLogic();
+    winCheck();
   } else {
     panelClick();
   }
-  winCheck();
 }
 
 void keyPressed() {
   if (key == CODED) {
     dPad();
+    winCheck();
   }
-  winCheck();
 }
