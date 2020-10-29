@@ -43,22 +43,28 @@ void swap() {
 void pushDirection() {
   if (storedIndexY == y) {
     if (storedIndexX-x > 0) {
-      if (Colors[cellsWide*y+(x-1)] == #000000) {
+      switch (Colors[cellsWide*y+(x-1)]) {
+      case #000000:
         wallSound();
-      } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
+        break;
+      case #796F48:
         wallSound();
-      } else {
+        break;
+      default:
         pushSound();
         pushLeft();
         numPush++;
         swap();
       }
     } else {
-      if (Colors[cellsWide*y+x+1] == #000000) {
+      switch (Colors[cellsWide*y+x+1]) {
+      case #000000:
         wallSound();
-      } else if (Colors[cellsWide*y+x+1] == #796F48) {
+        break;
+      case #796F48:
         wallSound();
-      } else {
+        break;
+      default:
         pushSound();
         pushRight();
         numPush++;
@@ -67,22 +73,28 @@ void pushDirection() {
     }
   } else {
     if (storedIndexY-y > 0) {
-      if (Colors[cellsWide*(y-1)+x] == #000000) {
+      switch (Colors[cellsWide*(y-1)+x]) {
+      case #000000:
         wallSound();
-      } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
+        break;
+      case #796F48:
         wallSound();
-      } else {
+        break;
+      default:
         pushSound();
         pushUp();
         numPush++;
         swap();
       }
     } else {
-      if (Colors[cellsWide*(y+1)+x] == #000000) {
+      switch (Colors[cellsWide*(y+1)+x]) {
+      case #000000:
         wallSound();
-      } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
+        break;
+      case #796F48:
         wallSound();
-      } else {
+        break;
+      default:
         pushSound();
         pushDown();
         numPush++;

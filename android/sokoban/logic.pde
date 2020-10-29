@@ -42,17 +42,23 @@ void swap() {
 void pushDirection() {
   if (storedIndexY == y) {
     if (storedIndexX-x > 0) {
-      if (Colors[cellsWide*y+(x-1)] == #000000) {
-      } else if (Colors[cellsWide*y+(x-1)] == #796F48) {
-      } else {
+      switch (Colors[cellsWide*y+(x-1)]) {
+      case #000000:
+        break;
+      case #796F48:
+        break;
+      default:
         pushLeft();
         numPush++;
         swap();
       }
     } else {
-      if (Colors[cellsWide*y+x+1] == #000000) {
-      } else if (Colors[cellsWide*y+x+1] == #796F48) {
-      } else {
+      switch (Colors[cellsWide*y+x+1]) {
+      case #000000:
+        break;
+      case #796F48:
+        break;
+      default:
         pushRight();
         numPush++;
         swap();
@@ -60,17 +66,23 @@ void pushDirection() {
     }
   } else {
     if (storedIndexY-y > 0) {
-      if (Colors[cellsWide*(y-1)+x] == #000000) {
-      } else if (Colors[cellsWide*(y-1)+x] == #796F48) {
-      } else {
+      switch (Colors[cellsWide*(y-1)+x]) {
+      case #000000:
+        break;
+      case #796F48:
+        break;
+      default:
         pushUp();
         numPush++;
         swap();
       }
     } else {
-      if (Colors[cellsWide*(y+1)+x] == #000000) {
-      } else if (Colors[cellsWide*(y+1)+x] == #796F48) {
-      } else {
+      switch (Colors[cellsWide*(y+1)+x]) {
+      case #000000:
+        break;
+      case #796F48:
+        break;
+      default:
         pushDown();
         numPush++;
         swap();

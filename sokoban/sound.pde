@@ -17,7 +17,7 @@ void soundPopulation() {
   song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");
   song3 = minim.loadFile("Slide.mp3");
   song4 = minim.loadFile("Magic_Chime.mp3");
-  mute = true;
+  mute = false;
   song();
 }
 
