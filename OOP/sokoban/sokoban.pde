@@ -20,9 +20,9 @@ Logic pushDown = new Logic(0, 1);
 
 int cellsWide = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow;
 float cellWidth, cellHeight, heightOffset, gameHeight;
-int[] Colors = new int[cellsWide*9];
-float[] XPositions = new float[cellsWide+1];
-float[] YPositions = new float[10];
+int[] colors = new int[cellsWide*9];
+float[] xPositions = new float[cellsWide+1];
+float[] yPositions = new float[10];
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;

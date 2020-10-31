@@ -9,7 +9,7 @@ void panel() {
   square(width-heightOffset*2, gameHeight, heightOffset);
   square(width-heightOffset, gameHeight, heightOffset);
   fill(black);
-  textAlign (CENTER, CENTER);
+  textAlign(CENTER, CENTER);
   textFont(buttonFont, height/20);
   text(level, 0, gameHeight, heightOffset, heightOffset);
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
@@ -24,17 +24,17 @@ void panel() {
 
 void panelClick() {
   panelPopulation();
-  if ( restartTest == true) {
+  if (restartTest == true) {
     setupLevel();
-  } else if ( nextTest == true) {
+  } else if (nextTest == true) {
     levelIndex++;
     setupLevel();
-  } else if ( lastTest == true) {
+  } else if (lastTest == true) {
     levelIndex--;
     setupLevel();
-  } else if ( muteTest == true) {
+  } else if (muteTest == true) {
     song();
-  } else if ( quitTest == true) {
+  } else if (quitTest == true) {
     exit();
   }
 }

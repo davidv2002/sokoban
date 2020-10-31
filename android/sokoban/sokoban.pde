@@ -12,9 +12,9 @@ Logic pushDown = new Logic(0, 1);
 
 int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow;
 float cellWidth, cellHeight, heightOffset, gameHeight, xDif, yDif;
-int[] Colors = new int[cellsWide*cellsTall];
-float[] XPositions = new float[cellsWide+1];
-float[] YPositions = new float[cellsTall+1];
+int[] colors = new int[cellsWide*cellsTall];
+float[] xPositions = new float[cellsWide+1];
+float[] yPositions = new float[cellsTall+1];
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
@@ -45,7 +45,7 @@ void mousePressed() {
   }
 }
 
-void onFlick( float xs, float ys, float px, float py, float v) {
+void onFlick(float xs, float ys, float px, float py, float v) {
   if (swipe == true) {
     xDif = px - xs;
     yDif = py - ys;
