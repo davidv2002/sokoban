@@ -1,11 +1,11 @@
 void baseLogic() {
   for (x = 0; x < cellsWide; x++) {
     for (y = 0; y < cellsTall; y++) {
-      if (pmouseX>xPositions[x] && pmouseY>yPositions[y] && pmouseX<xPositions[x+1] && pmouseY<yPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
+      if (pmouseX > xPositions[x] && pmouseY > yPositions[y] && pmouseX < xPositions[x+1] && pmouseY < yPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
         switch(colors[cellsWide*y+x]) {
-        case #000000: // black
+        case 0xFF000000: // black
           break;
-        case #796F48: // brown
+        case 0xFF796F48: // brown
           pushDirection();
           break;
         default:
@@ -18,9 +18,9 @@ void baseLogic() {
 
 void dPadLogic() {
   switch(colors[cellsWide*y+x]) {
-  case #000000: // black
+  case 0xFF000000: // black
     break;
-  case #796F48: // brown
+  case 0xFF796F48: // brown
     pushDirection();
     break;
   default:
@@ -33,24 +33,24 @@ void dPadLogic() {
 void pushDirection() {
   if (storedIndexY == y) {
     if (storedIndexX-x > 0) {
-      if (colors[cellsWide*y+(x-1)] == #FFFFFF) {
+      if (colors[cellsWide*y+(x-1)] == 0xFFFFFFFF) {
         pushLeft.shove();
         swap.swap();
       }
     } else {
-      if (colors[cellsWide*y+x+1] == #FFFFFF) {
+      if (colors[cellsWide*y+x+1] == 0xFFFFFFFF) {
         pushRight.shove();
         swap.swap();
       }
     }
   } else {
     if (storedIndexY-y > 0) {
-      if (colors[cellsWide*(y-1)+x] == #FFFFFF) {
+      if (colors[cellsWide*(y-1)+x] == 0xFFFFFFFF) {
         pushUp.shove();
         swap.swap();
       }
     } else {
-      if (colors[cellsWide*(y+1)+x] == #FFFFFF) {
+      if (colors[cellsWide*(y+1)+x] == 0xFFFFFFFF) {
         pushDown.shove();
         swap.swap();
       }

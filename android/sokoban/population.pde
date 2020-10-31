@@ -1,16 +1,14 @@
 void population() {
-  black = #000000;
-  red = #ff0000;
-  brown = #796F48;
-  yellow = #F9FC3B;
-  white = #ffffff;
+  black = 0xFF000000;
+  red = 0xFFff0000;
+  brown = 0xFF796F48;
+  yellow = 0xFFF9FC3B;
+  white = 0xFFFFFFFF;
   gameHeight = height*0.8;
   heightOffset = height-gameHeight;
   pic = loadImage("1.jpg");
   buttonFont = createFont("Microsoft Sans Serif", 80);
   swipe = false;
-  // matrix
-  // width and hight for the cells
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/cellsTall;
   // x cords of matrix

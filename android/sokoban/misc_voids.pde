@@ -2,7 +2,7 @@ void setupLevel() {
   // fill with black
   for (int i = 0; i < colors.length; i++) 
   {
-    colors[i] = #000000;
+    colors[i] = 0xFF000000;
   }
   switch(levelIndex) {
   case 0:
@@ -42,7 +42,7 @@ void setupLevel() {
   image(pic, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
     for (int j = 0; j < cellsTall; j++) {
-      if (colors[cellsWide*j+i] == #000000) {
+      if (colors[cellsWide*j+i] == 0xFF000000) {
       } else {
         fill(colors[cellsWide*j+i]);
         rect(xPositions[i], yPositions[j], cellWidth, cellHeight);
