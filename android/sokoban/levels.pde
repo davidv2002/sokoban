@@ -2,62 +2,92 @@ void winCheck() {
   switch(levelIndex) {
   case 0:
     if (Colors[cellsWide+1] == brown && Colors[cellsWide*3+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 1:
     if (Colors[cellsWide*5+5] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 2:
     if (Colors[cellsWide+4] == brown && Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*6+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 3:
     if (Colors[cellsWide*3+7] == brown && Colors[cellsWide*4+7] == brown && Colors[cellsWide*5+7] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 4:
     if ( Colors[cellsWide+3] == brown && Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*5+3] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
   case 5:
     if (Colors[cellsWide*3+3] == brown && Colors[cellsWide*5+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 6:
     if (Colors[cellsWide*3+6] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 7:
     if (Colors[cellsWide*3+1] == brown && Colors[cellsWide*3+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 8:
     if (Colors[cellsWide*2+1] == brown && Colors[cellsWide*3+5] == brown && Colors[cellsWide*4+1] == brown && Colors[cellsWide*5+4] == brown && Colors[cellsWide*6+3] == brown && Colors[cellsWide*6+6] == brown && Colors[cellsWide*7+4] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
     break;
   case 9:
     if (Colors[cellsWide*2+2] == brown && Colors[cellsWide*2+3] == brown && Colors[cellsWide*2+4] == brown && Colors[cellsWide*2+6] == brown && Colors[cellsWide*3+2] == brown && Colors[cellsWide*3+3] == brown && Colors[cellsWide*3+4] == brown && Colors[cellsWide*4+3] == brown && Colors[cellsWide*4+4] == brown && Colors[cellsWide*4+6] == brown) {
-      levelIndex++;
-      setupLevel();
+      win();
     }
+  }
+}
+
+void win() {
+  levelIndex++;
+  setupLevel();
+}
+
+void goals() {
+  fill(yellow);
+  switch(levelIndex) {
+  case 0:
+    goal0();
+    break;
+  case 1:
+    goal1();
+    break;
+  case 2:
+    goal2();
+    break;
+  case 3:
+    goal3();
+    break;
+  case 4:
+    goal4();
+    break;
+  case 5:
+    goal5();
+    break;
+  case 6:
+    goal6();
+    break;
+  case 7:
+    goal7();
+    break;
+  case 8:
+    goal8();
+    break;
+  case 9:
+    goal9();
     break;
   }
 }
@@ -75,6 +105,11 @@ void level0() {
   Colors[cellsWide*3+1] = red; // player
   Colors[cellsWide*3+2] = brown; // box
   Colors[cellsWide*3+3] = white; // box goal
+}
+
+void goal0() {
+  ellipse(XPositions[1]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void level1() {
@@ -106,6 +141,10 @@ void level1() {
   Colors[cellsWide*5+5] = white; // box goal
 }
 
+void goal1() {
+  ellipse(XPositions[5]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
 void level2() {
   // player location
   storedIndexX = 4;
@@ -129,6 +168,13 @@ void level2() {
   Colors[cellsWide*5+4] = brown; // box
   // row 6
   Colors[cellsWide*6+4] = white; // box goal
+}
+
+void goal2() {
+  ellipse(XPositions[4]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void level3() {
@@ -170,6 +216,12 @@ void level3() {
   Colors[cellsWide*7+3] = white;
 }
 
+void goal3() {
+  ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[7]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[7]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
 void level4() {
   // player location
   storedIndexX = 3;
@@ -203,6 +255,13 @@ void level4() {
   Colors[cellsWide*5+4] = white;
 }
 
+void goal4() {
+  ellipse(XPositions[3]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
 void level5() {
   // player location
   storedIndexX = 4;
@@ -230,6 +289,11 @@ void level5() {
   // row 6
   Colors[cellsWide*6+3] = white;
   Colors[cellsWide*6+4] = white;
+}
+
+void goal5() {
+  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void level6() {
@@ -275,6 +339,11 @@ void level6() {
   Colors[cellsWide*6+7] = red; // player
 }
 
+void goal6() {
+  ellipse(XPositions[6]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
 void level7() {
   // player location
   storedIndexX = 5;
@@ -300,6 +369,11 @@ void level7() {
   Colors[cellsWide*4+1] = white;
   Colors[cellsWide*4+2] = white;
   Colors[cellsWide*4+3] = white;
+}
+
+void goal7() {
+  ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
 }
 
 void level8() {
@@ -346,6 +420,16 @@ void level8() {
   Colors[cellsWide*7+6] = white;
 }
 
+void goal8() {
+  ellipse(XPositions[1]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[7]+cellHeight/2, cellWidth/2, cellHeight/2);
+}
+
 void level9() {
   // player location
   storedIndexX = 3;
@@ -389,4 +473,17 @@ void level9() {
   Colors[cellsWide*6+2] = white;
   Colors[cellsWide*6+3] = red; // player
   Colors[cellsWide*6+4] = white;
+}
+
+void goal9() {
+  ellipse(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[2]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[3]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
 }

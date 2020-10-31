@@ -1,5 +1,9 @@
 void setupLevel() {
-  levelPrep();
+  // fill with black
+  for ( int i = 0; i < Colors.length; i++) 
+  {
+    Colors[i] = #000000;
+  }
   switch(levelIndex) {
   case 0:
     level0();
@@ -34,18 +38,7 @@ void setupLevel() {
   default:
     exit();
   }
-  drawLevel();
-}
-
-void levelPrep() {
-  // fill with black
-  for ( int i = 0; i < Colors.length; i++) 
-  {
-    Colors[i] = #000000;
-  }
-}
-
-void drawLevel() {
+  // draw the level
   image(pic, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
     for (int j = 0; j < cellsTall; j++) {

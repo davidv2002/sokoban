@@ -1,23 +1,3 @@
-/**
- black = walls
- red = player
- brown = box
- */
-
-void dPadLogic() {
-  switch(Colors[cellsWide*y+x]) {
-  case #000000: // black
-    break;
-  case #796F48: // brown
-    pushDirection();
-    break;
-  default:
-    swap();
-    break;
-  }
-  winCheck();
-}
-
 void baseLogic() {
   for ( x = 0; x < cellsWide; x++) {
     for ( y = 0; y < cellsTall; y++) {
@@ -29,126 +9,86 @@ void baseLogic() {
           pushDirection();
           break;
         default:
-          swap();
-          break;
+          swap.swap();
         }
       }
     }
   }
 }
 
-void swap() {
-  // swap colors
-  storedColor = Colors[cellsWide*storedIndexY+storedIndexX];
-  Colors[cellsWide*storedIndexY+storedIndexX] = Colors[cellsWide*y+x];
-  Colors[cellsWide*y+x] = storedColor;
-  // redraw the cells
-  fill( Colors[cellsWide*storedIndexY+storedIndexX]);
-  rect( XPositions[storedIndexX], YPositions[storedIndexY], cellWidth, cellHeight);
-  fill( Colors[cellsWide*y+x]);
-  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
-  // update indexes
-  storedIndexX = x;
-  storedIndexY = y;
-  numMoves++;
+void dPadLogic() {
+  switch(Colors[cellsWide*y+x]) {
+  case #000000: // black
+    break;
+  case #796F48: // brown
+    pushDirection();
+    break;
+  default:
+    swap.swap();
+    break;
+  }
+  winCheck();
 }
 
 void pushDirection() {
   if (storedIndexY == y) {
     if (storedIndexX-x > 0) {
-      switch (Colors[cellsWide*y+(x-1)]) {
-      case #000000:
-        break;
-      case #796F48:
-        break;
-      default:
-        pushLeft();
-        numPush++;
-        swap();
+      if (Colors[cellsWide*y+(x-1)] == #FFFFFF) {
+        pushLeft.shove();
+        swap.swap();
       }
     } else {
-      switch (Colors[cellsWide*y+x+1]) {
-      case #000000:
-        break;
-      case #796F48:
-        break;
-      default:
-        pushRight();
-        numPush++;
-        swap();
+      if (Colors[cellsWide*y+x+1] == #FFFFFF) {
+        pushRight.shove();
+        swap.swap();
       }
     }
   } else {
     if (storedIndexY-y > 0) {
-      switch (Colors[cellsWide*(y-1)+x]) {
-      case #000000:
-        break;
-      case #796F48:
-        break;
-      default:
-        pushUp();
-        numPush++;
-        swap();
+      if (Colors[cellsWide*(y-1)+x] == #FFFFFF) {
+        pushUp.shove();
+        swap.swap();
       }
     } else {
-      switch (Colors[cellsWide*(y+1)+x]) {
-      case #000000:
-        break;
-      case #796F48:
-        break;
-      default:
-        pushDown();
-        numPush++;
-        swap();
+      if (Colors[cellsWide*(y+1)+x] == #FFFFFF) {
+        pushDown.shove();
+        swap.swap();
       }
     }
   }
 }
 
-void pushLeft() {
-  // swap colors
-  storedColor = Colors[cellsWide*y+x];
-  Colors[cellsWide*y+x] = Colors[cellsWide*y+(x-1)];
-  Colors[cellsWide*y+(x-1)] = storedColor;
-  // redraw the cells
-  fill( Colors[cellsWide*y+(x-1)]);
-  rect( XPositions[x-1], YPositions[y], cellWidth, cellHeight);
-  fill( Colors[cellsWide*y+x]);
-  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
-}
-
-void pushRight() {
-  // swap colors
-  storedColor = Colors[cellsWide*y+x];
-  Colors[cellsWide*y+x] = Colors[cellsWide*y+x+1];
-  Colors[cellsWide*y+x+1] = storedColor;
-  // redraw the cells
-  fill( Colors[cellsWide*y+x+1]);
-  rect( XPositions[x+1], YPositions[y], cellWidth, cellHeight);
-  fill( Colors[cellsWide*y+x]);
-  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
-}
-
-void pushUp() {
-  // swap colors
-  storedColor = Colors[cellsWide*y+x];
-  Colors[cellsWide*y+x] = Colors[cellsWide*(y-1)+x];
-  Colors[cellsWide*(y-1)+x] = storedColor;
-  // redraw the cells
-  fill( Colors[cellsWide*(y-1)+x]);
-  rect( XPositions[x], YPositions[y-1], cellWidth, cellHeight);
-  fill( Colors[cellsWide*y+x]);
-  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
-}
-
-void pushDown() {
-  // swap colors
-  storedColor = Colors[cellsWide*y+x];
-  Colors[cellsWide*y+x] = Colors[cellsWide*(y+1)+x];
-  Colors[cellsWide*(y+1)+x] = storedColor;
-  // redraw the cells
-  fill( Colors[cellsWide*(y+1)+x]);
-  rect( XPositions[x], YPositions[y+1], cellWidth, cellHeight);
-  fill( Colors[cellsWide*y+x]);
-  rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+class Logic {
+  int storedColor, index1, index2;
+  Logic (int Index1, int Index2) {
+    index1 = Index1;
+    index2 = Index2;
+  }
+  void shove() {
+    // swap colors
+    storedColor = Colors[cellsWide*y+x];
+    Colors[cellsWide*y+x] = Colors[cellsWide*(y+index2)+(x+index1)];
+    Colors[cellsWide*(y+index2)+(x+index1)] = storedColor;
+    // redraw the cells
+    fill( Colors[cellsWide*(y+index2)+(x+index1)]);
+    rect( XPositions[x+index1], YPositions[y+index2], cellWidth, cellHeight);
+    fill( Colors[cellsWide*y+x]);
+    rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+    numPush++;
+  }
+  void swap() {
+    // swap colors
+    storedColor = Colors[cellsWide*storedIndexY+storedIndexX];
+    Colors[cellsWide*storedIndexY+storedIndexX] = Colors[cellsWide*y+x];
+    Colors[cellsWide*y+x] = storedColor;
+    // redraw the cells
+    fill( Colors[cellsWide*storedIndexY+storedIndexX]);
+    rect( XPositions[storedIndexX], YPositions[storedIndexY], cellWidth, cellHeight);
+    fill( Colors[cellsWide*y+x]);
+    rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
+    // update indexes
+    storedIndexX = x;
+    storedIndexY = y;
+    numMoves++;
+  }
 }

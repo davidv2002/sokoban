@@ -9,9 +9,7 @@ void population() {
   pic = loadImage("1.jpg");
   buttonFont = createFont ("Microsoft Sans Serif", 80);
   swipe = false;
-}
-
-void buildMatrix() {
+  // matrix
   // width and hight for the cells
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/cellsTall;
@@ -23,6 +21,7 @@ void buildMatrix() {
   for (int i = 0; i < YPositions.length; i++) {
     YPositions[i] = gameHeight*((i*1.0)/cellsTall);
   }
+  panelPopulation();
 }
 
 void panelTextPopulation() {
