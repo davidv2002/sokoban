@@ -41,7 +41,7 @@ void setupLevel() {
   // draw the level
   image(pic, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
-    for (int j = 0; j < cellsTall; j++) {
+    for (int j = 0; j < 9; j++) {
       if (Colors[cellsWide*j+i] == #000000) {
       } else {
         fill( Colors[cellsWide*j+i]);

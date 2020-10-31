@@ -11,14 +11,14 @@ void population() {
   // matrix
   // width and hight for the cells
   cellWidth = width/cellsWide;
-  cellHeight = gameHeight/cellsTall;
+  cellHeight = gameHeight/9;
   // x cords of matrix
   for (int i = 0; i < XPositions.length; i++) {
     XPositions[i] = width*((i*1.0)/cellsWide);
   }
   // y cords of matrix
   for (int i = 0; i < YPositions.length; i++) {
-    YPositions[i] = gameHeight*((i*1.0)/cellsTall);
+    YPositions[i] = gameHeight*(i/9.0);
   }
   // sound
   minim = new Minim(this);

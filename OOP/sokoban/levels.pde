@@ -48,7 +48,6 @@ void winCheck() {
     if (Colors[cellsWide*2+2] == brown && Colors[cellsWide*2+3] == brown && Colors[cellsWide*2+4] == brown && Colors[cellsWide*2+6] == brown && Colors[cellsWide*3+2] == brown && Colors[cellsWide*3+3] == brown && Colors[cellsWide*3+4] == brown && Colors[cellsWide*4+3] == brown && Colors[cellsWide*4+4] == brown && Colors[cellsWide*4+6] == brown) {
       win();
     }
-    break;
   }
 }
 
@@ -94,7 +93,6 @@ void goals() {
     break;
   case 9:
     goal9();
-    break;
   }
 }
 
@@ -114,8 +112,8 @@ void level0() {
 }
 
 void goal0() {
-  ellipse(XPositions[1]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[1]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
 }
 
 void level1() {
@@ -148,7 +146,7 @@ void level1() {
 }
 
 void goal1() {
-  ellipse(XPositions[5]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[5]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2.5);
 }
 
 void level2() {
@@ -177,10 +175,10 @@ void level2() {
 }
 
 void goal2() {
-  ellipse(XPositions[4]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[4]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2.5);
 }
 
 void level3() {
@@ -223,9 +221,9 @@ void level3() {
 }
 
 void goal3() {
-  ellipse(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[7]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[7]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[7]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[7]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[7]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2.5);
 }
 
 void level4() {
@@ -262,10 +260,10 @@ void level4() {
 }
 
 void goal4() {
-  ellipse(XPositions[3]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[3]+cellWidth/2, YPositions[1]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2.5);
 }
 
 void level5() {
@@ -298,8 +296,8 @@ void level5() {
 }
 
 void goal5() {
-  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2.5);
 }
 
 void level6() {
@@ -346,8 +344,8 @@ void level6() {
 }
 
 void goal6() {
-  ellipse(XPositions[6]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[6]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
 }
 
 void level7() {
@@ -378,8 +376,8 @@ void level7() {
 }
 
 void goal7() {
-  ellipse(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[1]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
 }
 
 void level8() {
@@ -427,13 +425,13 @@ void level8() {
 }
 
 void goal8() {
-  ellipse(XPositions[1]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[6]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[7]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[1]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[5]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[1]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[5]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[6]+cellWidth/2, YPositions[6]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[7]+cellHeight/2, cellWidth/2.5);
 }
 
 void level9() {
@@ -482,14 +480,14 @@ void level9() {
 }
 
 void goal9() {
-  ellipse(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[6]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[2]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[3]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
-  ellipse(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2, cellHeight/2);
+  circle(XPositions[2]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[6]+cellWidth/2, YPositions[2]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[2]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[3]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[4]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(XPositions[6]+cellWidth/2, YPositions[4]+cellHeight/2, cellWidth/2.5);
 }
