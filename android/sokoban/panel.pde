@@ -15,15 +15,15 @@ void panel() {
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
   if (swipe == true) {
-    text("click mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+    text("Click Mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
   } else {
-    text("swipe mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+    text("Swipe Mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
   }
-  text("restart level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
-  text("quit playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
+  text("Restart Level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
+  text("Quit Playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
   textFont(buttonFont, height/30);
-  text("next level", width-heightOffset*2.5, gameHeight, heightOffset/2, heightOffset/2);
-  text("last level", width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
+  text("Next Level", width-heightOffset*2.5, gameHeight, heightOffset/2, heightOffset/2);
+  text("Last Level", width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
 }
 
 void panelClick() {

@@ -14,12 +14,12 @@ void panel() {
   text(level, 0, gameHeight, heightOffset, heightOffset);
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
-  text("mute", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
-  text("restart level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
-  text("quit playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
+  text("Mute", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+  text("Restart Level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
+  text("Quit Playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
   textFont(buttonFont, height/30);
-  text("next level", width-heightOffset*2.5, gameHeight, heightOffset/2, heightOffset/2);
-  text("last level", width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
+  text("Next Level", width-heightOffset*2.5, gameHeight, heightOffset/2, heightOffset/2);
+  text("Last Level", width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
 }
 
 void panelClick() {

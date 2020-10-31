@@ -26,9 +26,9 @@ void population() {
 }
 
 void panalTextPopulation() {
-  level = "level\n"+(levelIndex+1);
-  moves = "moves\n"+numMoves;
-  pushes = "pushes\n"+numPush;
+  level = "Level\n"+(levelIndex+1);
+  moves = "Moves\n"+numMoves;
+  pushes = "Pushes\n"+numPush;
 }
 
 void panelPopulation() {
