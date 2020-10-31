@@ -1,3 +1,3 @@
 # sokoban
 the game Sokoban made in processing 3. <br>
-done for now.
+now with object oriented programming.
