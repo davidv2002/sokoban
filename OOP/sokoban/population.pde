@@ -8,9 +8,7 @@ void population() {
   heightOffset = height-gameHeight;
   pic = loadImage("1.jpg");
   buttonFont = createFont ("Microsoft Sans Serif", 80);
-}
-
-void buildMatrix() {
+  // matrix
   // width and hight for the cells
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/cellsTall;
@@ -22,6 +20,16 @@ void buildMatrix() {
   for (int i = 0; i < YPositions.length; i++) {
     YPositions[i] = gameHeight*((i*1.0)/cellsTall);
   }
+  // sound
+  minim = new Minim(this);
+  song1 = minim.loadFile("Beat_Your_Competition.mp3");
+  song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");
+  song3 = minim.loadFile("Slide.mp3");
+  song4 = minim.loadFile("Magic_Chime.mp3");
+  mute = true;
+  song();
+  setupLevel();
+  panelPopulation();
 }
 
 void panalTextPopulation() {

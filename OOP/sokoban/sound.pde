@@ -11,16 +11,6 @@ AudioPlayer song2;
 AudioPlayer song3;
 AudioPlayer song4;
 
-void soundPopulation() {
-  minim = new Minim(this);
-  song1 = minim.loadFile("Beat_Your_Competition.mp3");
-  song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");
-  song3 = minim.loadFile("Slide.mp3");
-  song4 = minim.loadFile("Magic_Chime.mp3");
-  mute = true;
-  song();
-}
-
 void song() {
   if (mute == true) {
     song1.loop();
