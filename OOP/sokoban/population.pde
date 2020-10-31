@@ -10,15 +10,12 @@ void population() {
   buttonFont = createFont("Microsoft Sans Serif", 80);
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/9;
-  // x cords of matrix
   for (int i = 0; i < xPositions.length; i++) {
     xPositions[i] = width*((i*1.0)/cellsWide);
   }
-  // y cords of matrix
   for (int i = 0; i < yPositions.length; i++) {
     yPositions[i] = gameHeight*(i/9.0);
   }
-  // sound
   minim = new Minim(this);
   song1 = minim.loadFile("Beat_Your_Competition.mp3");
   song2 = minim.loadFile("Glass_and_Metal_Collision.mp3");

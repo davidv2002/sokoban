@@ -3,10 +3,10 @@ void baseLogic() {
     for (y = 0; y < 9; y++) {
       if (pmouseX > xPositions[x] && pmouseY > yPositions[y] && pmouseX < xPositions[x+1] && pmouseY < yPositions[y+1] && abs(storedIndexX-x)+abs(storedIndexY-y) == 1) {
         switch(colors[cellsWide*y+x]) {
-        case 0xFF000000: // black
+        case 0xFF000000: 
           wallSound();
           break;
-        case 0xFF796F48: // brown
+        case 0xFF796F48: 
           pushDirection();
           break;
         default:
@@ -19,10 +19,10 @@ void baseLogic() {
 
 void dPadLogic() {
   switch(colors[cellsWide*y+x]) {
-  case 0xFF000000: // black
+  case 0xFF000000: 
     wallSound();
     break;
-  case 0xFF796F48: // brown
+  case 0xFF796F48: 
     pushDirection();
     break;
   default:

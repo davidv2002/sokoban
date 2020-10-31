@@ -11,11 +11,9 @@ void population() {
   swipe = false;
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/cellsTall;
-  // x cords of matrix
   for (int i = 0; i < xPositions.length; i++) {
     xPositions[i] = width*((i*1.0)/cellsWide);
   }
-  // y cords of matrix
   for (int i = 0; i < yPositions.length; i++) {
     yPositions[i] = gameHeight*((i*1.0)/cellsTall);
   }

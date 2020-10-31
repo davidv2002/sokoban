@@ -49,6 +49,7 @@ void setupLevel() {
       }
     }
   }
+  // reset
   numMoves = 0;
   numPush = 0;
 }

@@ -100,15 +100,14 @@ void level0() {
   // player location
   storedIndexX = 1;
   storedIndexY = 3;
-  // fill the level
   // row 1 
-  colors[cellsWide+1] = white; // box goal
+  colors[cellsWide+1] = white; 
   // row 2
-  colors[cellsWide*2+1] = brown; // box
+  colors[cellsWide*2+1] = brown; 
   // row 3
-  colors[cellsWide*3+1] = red; // player
-  colors[cellsWide*3+2] = brown; // box
-  colors[cellsWide*3+3] = white; // box goal
+  colors[cellsWide*3+1] = red; 
+  colors[cellsWide*3+2] = brown; 
+  colors[cellsWide*3+3] = white;
 }
 
 void goal0() {
@@ -120,9 +119,8 @@ void level1() {
   // player location
   storedIndexX = 1;
   storedIndexY = 1;
-  // fill the level
   // row 1
-  colors[cellsWide+1] = red; // player
+  colors[cellsWide+1] = red; 
   colors[cellsWide+2] = white;
   colors[cellsWide+3] = white;
   colors[cellsWide+4] = white;
@@ -141,8 +139,8 @@ void level1() {
   colors[cellsWide*5+1] = white;
   colors[cellsWide*5+2] = white;
   colors[cellsWide*5+3] = white;
-  colors[cellsWide*5+4] = brown; // box
-  colors[cellsWide*5+5] = white; // box goal
+  colors[cellsWide*5+4] = brown; 
+  colors[cellsWide*5+5] = white;
 }
 
 void goal1() {
@@ -153,25 +151,24 @@ void level2() {
   // player location
   storedIndexX = 4;
   storedIndexY = 4;
-  // fill the level
   // row 1
-  colors[cellsWide+4] = white; // box goal
+  colors[cellsWide+4] = white; 
   // row 2
   colors[cellsWide*2+4] = white;
   // row 3
-  colors[cellsWide*3+4] = brown; // box
+  colors[cellsWide*3+4] = brown; 
   colors[cellsWide*3+5] = white;
-  colors[cellsWide*3+6] = brown; // box
-  colors[cellsWide*3+7] = white; // box goal
+  colors[cellsWide*3+6] = brown; 
+  colors[cellsWide*3+7] = white; 
   // row 4
-  colors[cellsWide*4+1] = white; // box goal
+  colors[cellsWide*4+1] = white; 
   colors[cellsWide*4+2] = white;
-  colors[cellsWide*4+3] = brown; // box
-  colors[cellsWide*4+4] = red; // player
+  colors[cellsWide*4+3] = brown; 
+  colors[cellsWide*4+4] = red; 
   // row 5
-  colors[cellsWide*5+4] = brown; // box
+  colors[cellsWide*5+4] = brown; 
   // row 6
-  colors[cellsWide*6+4] = white; // box goal
+  colors[cellsWide*6+4] = white;
 }
 
 void goal2() {
@@ -185,7 +182,6 @@ void level3() {
   // player location
   storedIndexX = 1;
   storedIndexY = 7;
-  // fill the level
   // row 1
   colors[cellsWide+2] = white;
   colors[cellsWide+3] = white;
@@ -201,21 +197,21 @@ void level3() {
   colors[cellsWide*3+4] = white;
   colors[cellsWide*3+5] = white;
   colors[cellsWide*3+6] = white;
-  colors[cellsWide*3+7] = white; // box goal
+  colors[cellsWide*3+7] = white; 
   // row 4
   colors[cellsWide*4+3] = white;
-  colors[cellsWide*4+7] = white; // box goal
+  colors[cellsWide*4+7] = white; 
   // row 5
   colors[cellsWide*5+1] = white;
-  colors[cellsWide*5+2] = brown; // box
+  colors[cellsWide*5+2] = brown; 
   colors[cellsWide*5+3] = white;
-  colors[cellsWide*5+7] = white; // box goal
+  colors[cellsWide*5+7] = white; 
   // row 6
   colors[cellsWide*6+1] = white;
-  colors[cellsWide*6+2] = brown; // box
-  colors[cellsWide*6+3] = brown; // box
+  colors[cellsWide*6+2] = brown; 
+  colors[cellsWide*6+3] = brown; 
   // row 7
-  colors[cellsWide*7+1] = red; // player
+  colors[cellsWide*7+1] = red; 
   colors[cellsWide*7+2] = white;
   colors[cellsWide*7+3] = white;
 }
@@ -230,32 +226,31 @@ void level4() {
   // player location
   storedIndexX = 3;
   storedIndexY = 1;
-  // fill the level
   // row 1
   colors[cellsWide+2] = white;
-  colors[cellsWide+3] = red; // player and box goal
+  colors[cellsWide+3] = red;  
   colors[cellsWide+4] = white;
   // row 2
   colors[cellsWide*2+1] = white;
   colors[cellsWide*2+2] = white;
-  colors[cellsWide*2+3] = brown; // box
+  colors[cellsWide*2+3] = brown; 
   colors[cellsWide*2+4] = white;
   colors[cellsWide*2+5] = white;
   // row 3
-  colors[cellsWide*3+1] = white; // box goal
-  colors[cellsWide*3+2] = brown; // box
+  colors[cellsWide*3+1] = white; 
+  colors[cellsWide*3+2] = brown; 
   colors[cellsWide*3+3] = white;
-  colors[cellsWide*3+4] = brown; // box
-  colors[cellsWide*3+5] = white; // box goal
+  colors[cellsWide*3+4] = brown; 
+  colors[cellsWide*3+5] = white; 
   // row 4
   colors[cellsWide*4+1] = white;
   colors[cellsWide*4+2] = white;
-  colors[cellsWide*4+3] = brown; // box
+  colors[cellsWide*4+3] = brown; 
   colors[cellsWide*4+4] = white;
   colors[cellsWide*4+5] = white;
   // row 5
   colors[cellsWide*5+2] = white;
-  colors[cellsWide*5+3] = white; // box goal
+  colors[cellsWide*5+3] = white; 
   colors[cellsWide*5+4] = white;
 }
 
@@ -270,17 +265,16 @@ void level5() {
   // player location
   storedIndexX = 4;
   storedIndexY = 1;
-  // fill the level
   // row 1
   colors[cellsWide+3] = white;
   colors[cellsWide+4] = red;
   // row 2
-  colors[cellsWide*2+3] = brown; // box
+  colors[cellsWide*2+3] = brown; 
   colors[cellsWide*2+4] = white;
   // row 3
   colors[cellsWide*3+1] = white;
-  colors[cellsWide*3+2] = brown; // box
-  colors[cellsWide*3+3] = white; // box goal
+  colors[cellsWide*3+2] = brown; 
+  colors[cellsWide*3+3] = white; 
   colors[cellsWide*3+4] = white;
   // row 4
   colors[cellsWide*4+1] = white;
@@ -289,7 +283,7 @@ void level5() {
   colors[cellsWide*4+4] = white;
   // row 5
   colors[cellsWide*5+3] = white; 
-  colors[cellsWide*5+4] = white; // box goal
+  colors[cellsWide*5+4] = white; 
   // row 6
   colors[cellsWide*6+3] = white;
   colors[cellsWide*6+4] = white;
@@ -304,27 +298,26 @@ void level6() {
   // player location
   storedIndexX = 7;
   storedIndexY = 6;
-  // fill the level
   // row 1
   colors[cellsWide+5] = white;
   colors[cellsWide+6] = white;
   colors[cellsWide+5] = white;
   // row 2
   colors[cellsWide*2+2] = white;
-  colors[cellsWide*2+3] = brown; // box
+  colors[cellsWide*2+3] = brown; 
   colors[cellsWide*2+4] = white;
   colors[cellsWide*2+5] = white;
   colors[cellsWide*2+6] = white;
   colors[cellsWide*2+7] = white;
   // row 3
   colors[cellsWide*3+2] = white;
-  colors[cellsWide*3+3] = brown; // box
+  colors[cellsWide*3+3] = brown; 
   colors[cellsWide*3+4] = white;
-  colors[cellsWide*3+6] = white; // box goal
+  colors[cellsWide*3+6] = white; 
   colors[cellsWide*3+7] = white;
   // row 4
   colors[cellsWide*4+2] = white;
-  colors[cellsWide*4+6] = white; // box goal
+  colors[cellsWide*4+6] = white; 
   colors[cellsWide*4+7] = white;
   // row 5
   colors[cellsWide*5+1] = white;
@@ -340,7 +333,7 @@ void level6() {
   colors[cellsWide*6+3] = white;
   colors[cellsWide*6+5] = white;
   colors[cellsWide*6+6] = white;
-  colors[cellsWide*6+7] = red; // player
+  colors[cellsWide*6+7] = red;
 }
 
 void goal6() {
@@ -352,7 +345,6 @@ void level7() {
   // player location
   storedIndexX = 5;
   storedIndexY = 3;
-  // fill the level
   // row 1
   colors[cellsWide+1] = white;
   colors[cellsWide+2] = white;
@@ -364,11 +356,11 @@ void level7() {
   colors[cellsWide*2+3] = white;
   colors[cellsWide*2+5] = white;
   // row 3
-  colors[cellsWide*3+1] = white; // box goal
+  colors[cellsWide*3+1] = white; 
   colors[cellsWide*3+2] = white;
-  colors[cellsWide*3+3] = brown; // box
-  colors[cellsWide*3+4] = brown; // box in goal
-  colors[cellsWide*3+5] = red; // player
+  colors[cellsWide*3+3] = brown; 
+  colors[cellsWide*3+4] = brown; 
+  colors[cellsWide*3+5] = red; 
   // row 4
   colors[cellsWide*4+1] = white;
   colors[cellsWide*4+2] = white;
@@ -384,42 +376,41 @@ void level8() {
   // player location
   storedIndexX = 2;
   storedIndexY = 2;
-  // fill the level
   // row 1
   colors[cellsWide+3] = white;
   colors[cellsWide+4] = white;
   colors[cellsWide+5] = white;
   // row 2
-  colors[cellsWide*2+1] = white; // box goal
-  colors[cellsWide*2+2] = red; // player
-  colors[cellsWide*2+3] = brown; // box 
+  colors[cellsWide*2+1] = white; 
+  colors[cellsWide*2+2] = red; 
+  colors[cellsWide*2+3] = brown;  
   colors[cellsWide*2+4] = white;
   colors[cellsWide*2+5] = white;
   // row 3
   colors[cellsWide*3+3] = white;
-  colors[cellsWide*3+4] = brown; // box
-  colors[cellsWide*3+5] = white; // box goal
+  colors[cellsWide*3+4] = brown; 
+  colors[cellsWide*3+5] = white; 
   // row 4
-  colors[cellsWide*4+1] = white; // box goal
-  colors[cellsWide*4+4] = brown; // box
+  colors[cellsWide*4+1] = white; 
+  colors[cellsWide*4+4] = brown; 
   colors[cellsWide*4+5] = white;
   // row 5
   colors[cellsWide*5+1] = white;
   colors[cellsWide*5+3] = white;
-  colors[cellsWide*5+4] = white; // box goal
+  colors[cellsWide*5+4] = white; 
   colors[cellsWide*5+5] = white;
   // row 6
-  colors[cellsWide*6+1] = brown; // box
+  colors[cellsWide*6+1] = brown; 
   colors[cellsWide*6+2] = white;
-  colors[cellsWide*6+3] = brown; // box in goal
-  colors[cellsWide*6+4] = brown; // box
-  colors[cellsWide*6+5] = brown; // box
-  colors[cellsWide*6+6] = white; // box goal
+  colors[cellsWide*6+3] = brown; 
+  colors[cellsWide*6+4] = brown; 
+  colors[cellsWide*6+5] = brown; 
+  colors[cellsWide*6+6] = white; 
   // row 7
   colors[cellsWide*7+1] = white;
   colors[cellsWide*7+2] = white;
   colors[cellsWide*7+3] = white;
-  colors[cellsWide*7+4] = white; // box goal
+  colors[cellsWide*7+4] = white; 
   colors[cellsWide*7+5] = white;
   colors[cellsWide*7+6] = white;
 }
@@ -438,7 +429,6 @@ void level9() {
   // player location
   storedIndexX = 3;
   storedIndexY = 6;
-  // fill the level
   // row 1
   colors[cellsWide+1] = white;
   colors[cellsWide+2] = white;
@@ -448,34 +438,34 @@ void level9() {
   colors[cellsWide+6] = white;
   // row 2
   colors[cellsWide*2+1] = white;
-  colors[cellsWide*2+2] = white; // box goal
-  colors[cellsWide*2+3] = white; // box goal
-  colors[cellsWide*2+4] = brown; // box
-  colors[cellsWide*2+5] = brown; // box in goal
-  colors[cellsWide*2+6] = white; // box goal
+  colors[cellsWide*2+2] = white; 
+  colors[cellsWide*2+3] = white; 
+  colors[cellsWide*2+4] = brown; 
+  colors[cellsWide*2+5] = brown; 
+  colors[cellsWide*2+6] = white; 
   // row 3
   colors[cellsWide*3+1] = white;
-  colors[cellsWide*3+2] = white; // box goal
-  colors[cellsWide*3+3] = brown; // box in goal
-  colors[cellsWide*3+4] = white; // box goal
-  colors[cellsWide*3+5] = brown; // box
+  colors[cellsWide*3+2] = white; 
+  colors[cellsWide*3+3] = brown; 
+  colors[cellsWide*3+4] = white; 
+  colors[cellsWide*3+5] = brown; 
   colors[cellsWide*3+6] = white;
   // row 4
   colors[cellsWide*4+1] = white;
   colors[cellsWide*4+2] = white;
-  colors[cellsWide*4+3] = brown; // box in goal
-  colors[cellsWide*4+4] = white; // box goal
-  colors[cellsWide*4+5] = brown; // box
-  colors[cellsWide*4+6] = white; // box goal
+  colors[cellsWide*4+3] = brown; 
+  colors[cellsWide*4+4] = white; 
+  colors[cellsWide*4+5] = brown; 
+  colors[cellsWide*4+6] = white; 
   // row 5
-  colors[cellsWide*5+2] = brown; // box
-  colors[cellsWide*5+3] = brown; // box
-  colors[cellsWide*5+4] = brown; // box
-  colors[cellsWide*5+5] = brown; // box
+  colors[cellsWide*5+2] = brown; 
+  colors[cellsWide*5+3] = brown; 
+  colors[cellsWide*5+4] = brown; 
+  colors[cellsWide*5+5] = brown; 
   colors[cellsWide*5+6] = white;
   // row 6
   colors[cellsWide*6+2] = white;
-  colors[cellsWide*6+3] = red; // player
+  colors[cellsWide*6+3] = red; 
   colors[cellsWide*6+4] = white;
 }
 
