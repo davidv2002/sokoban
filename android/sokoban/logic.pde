@@ -4,6 +4,20 @@
  brown = box
  */
 
+void dPadLogic() {
+  switch(Colors[cellsWide*y+x]) {
+  case #000000: // black
+    break;
+  case #796F48: // brown
+    pushDirection();
+    break;
+  default:
+    swap();
+    break;
+  }
+  winCheck();
+}
+
 void baseLogic() {
   for ( x = 0; x < cellsWide; x++) {
     for ( y = 0; y < cellsTall; y++) {

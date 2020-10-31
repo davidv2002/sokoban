@@ -3,6 +3,7 @@ void panel() {
   square(0, gameHeight, heightOffset);
   square(heightOffset, gameHeight, heightOffset);
   square(heightOffset*2, gameHeight, heightOffset);
+  square(width-heightOffset*3.5, gameHeight, heightOffset);
   square(width-heightOffset*2.5, gameHeight, heightOffset/2);
   square(width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2);
   square(width-heightOffset*2, gameHeight, heightOffset);
@@ -13,6 +14,11 @@ void panel() {
   text(level, 0, gameHeight, heightOffset, heightOffset);
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
+  if (swipe == true) {
+    text("click mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+  } else {
+    text("swipe mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+  }
   text("restart level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
   text("quit playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
   textFont(buttonFont, height/30);
@@ -30,6 +36,12 @@ void panelClick() {
   } else if ( lastTest == true) {
     levelIndex--;
     setupLevel();
+  } else if ( swipeTest == true) {
+    if (swipe == true) {
+      swipe = false;
+    } else {
+      swipe = true;
+    }
   } else if ( quitTest == true) {
     exit();
   }

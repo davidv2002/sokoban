@@ -8,6 +8,7 @@ void population() {
   heightOffset = height-gameHeight;
   pic = loadImage("1.jpg");
   buttonFont = createFont ("Microsoft Sans Serif", 80);
+  swipe = false;
 }
 
 void buildMatrix() {
@@ -33,6 +34,7 @@ void panelTextPopulation() {
 void panelPopulation() {
   quitTest = (pmouseX > width-heightOffset);
   restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
+  swipeTest = (pmouseX > width-heightOffset*3.5 && pmouseX < width-heightOffset*2.5);
   nextTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
   lastTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
 }
