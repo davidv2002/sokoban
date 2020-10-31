@@ -38,7 +38,6 @@ void mousePressed() {
   if (pmouseY < gameHeight) {
     if (swipe == false) {
       baseLogic();
-      winCheck();
     }
   } else {
     panelClick();

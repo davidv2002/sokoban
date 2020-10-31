@@ -8,6 +8,7 @@ void baseLogic() {
           break;
         case 0xFF796F48: 
           pushDirection();
+          winCheck();
           break;
         default:
           swap.swap();
@@ -24,12 +25,11 @@ void dPadLogic() {
     break;
   case 0xFF796F48: 
     pushDirection();
+    winCheck();
     break;
   default:
     swap.swap();
-    break;
   }
-  winCheck();
 }
 
 void pushDirection() {

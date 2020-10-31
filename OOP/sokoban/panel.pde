@@ -26,15 +26,23 @@ void panelClick() {
   panelPopulation();
   if (restartTest == true) {
     setupLevel();
-  } else if (nextTest == true) {
+    return;
+  } 
+  if (nextTest == true) {
     levelIndex++;
     setupLevel();
-  } else if (lastTest == true) {
+    return;
+  } 
+  if (lastTest == true) {
     levelIndex--;
     setupLevel();
-  } else if (muteTest == true) {
+    return;
+  } 
+  if (muteTest == true) {
     song();
-  } else if (quitTest == true) {
+    return;
+  }
+  if (quitTest == true) {
     exit();
   }
 }
