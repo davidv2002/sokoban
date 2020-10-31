@@ -53,7 +53,11 @@ void winCheck() {
 }
 
 void win() {
-  winSound();
+  if (mute == true) {
+  } else {
+    song4.play();
+    song4.rewind();
+  }
   levelIndex++;
   setupLevel();
 }

@@ -1,4 +1,23 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 // global variables
+Minim minim;
+AudioPlayer song1;
+AudioPlayer song2;
+AudioPlayer song3;
+AudioPlayer song4;
+
+Logic swap = new Logic(0, 0);
+Logic pushLeft = new Logic(-1, 0);
+Logic pushRight = new Logic(1, 0);
+Logic pushUp = new Logic(0, -1);
+Logic pushDown = new Logic(0, 1);
+
 int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY;
 float cellWidth, cellHeight, heightOffset, gameHeight;
 color[] Colors = new color[cellsWide*cellsTall];
@@ -10,9 +29,12 @@ PFont buttonFont;
 PImage pic;
 boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
+
 void setup() {
   size(1024, 768);
   population();
+  song();
+  setupLevel();
 }
 
 void draw() {

@@ -27,8 +27,6 @@ void population() {
   song3 = minim.loadFile("Slide.mp3");
   song4 = minim.loadFile("Magic_Chime.mp3");
   mute = true;
-  song();
-  setupLevel();
   panelPopulation();
 }
 

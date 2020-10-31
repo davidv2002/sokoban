@@ -1,9 +1,3 @@
-Logic swap = new Logic(0, 0);
-Logic pushLeft = new Logic(-1, 0);
-Logic pushRight = new Logic(1, 0);
-Logic pushUp = new Logic(0, -1);
-Logic pushDown = new Logic(0, 1);
-
 void baseLogic() {
   for ( x = 0; x < cellsWide; x++) {
     for ( y = 0; y < cellsTall; y++) {
@@ -79,7 +73,6 @@ class Logic {
     index1 = Index1;
     index2 = Index2;
   }
-
   void shove() {
     // swap colors
     storedColor = Colors[cellsWide*y+x];
@@ -91,9 +84,14 @@ class Logic {
     fill( Colors[cellsWide*y+x]);
     rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
     numPush++;
-    pushSound();
+    {
+      if (mute == true) {
+      } else {
+        song3.play();
+        song3.rewind();
+      }
+    }
   }
-
   void swap() {
     // swap colors
     storedColor = Colors[cellsWide*storedIndexY+storedIndexX];

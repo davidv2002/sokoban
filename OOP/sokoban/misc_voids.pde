@@ -52,3 +52,22 @@ void setupLevel() {
   numMoves = 0;
   numPush = 0;
 }
+
+void song() {
+  if (mute == true) {
+    song1.loop();
+    mute = false;
+  } else {
+    song1.pause();
+    song1.rewind();
+    mute = true;
+  }
+}
+
+void wallSound() {
+  if (mute == true) {
+  } else {
+    song2.play();
+    song2.rewind();
+  }
+}
