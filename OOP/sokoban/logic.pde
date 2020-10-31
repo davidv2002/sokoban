@@ -29,6 +29,7 @@ void dPadLogic() {
     swap.swap();
     break;
   }
+  winCheck();
 }
 
 void pushDirection() {
@@ -84,12 +85,10 @@ class Logic {
     fill( Colors[cellsWide*y+x]);
     rect( XPositions[x], YPositions[y], cellWidth, cellHeight);
     numPush++;
-    {
-      if (mute == true) {
-      } else {
-        song3.play();
-        song3.rewind();
-      }
+    if (mute == true) {
+    } else {
+      song3.play();
+      song3.rewind();
     }
   }
   void swap() {

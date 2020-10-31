@@ -74,8 +74,6 @@ void keyPressed() {
       x = storedIndexX+1;
       y = storedIndexY;
       dPadLogic();
-      break;
     }
-    winCheck();
   }
 }
