@@ -18,12 +18,11 @@ Logic pushRight = new Logic(1, 0);
 Logic pushUp = new Logic(0, -1);
 Logic pushDown = new Logic(0, 1);
 
-int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY;
+int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow;
 float cellWidth, cellHeight, heightOffset, gameHeight;
-color[] Colors = new color[cellsWide*cellsTall];
+int[] Colors = new int[cellsWide*cellsTall];
 float[] XPositions = new float[cellsWide+1];
 float[] YPositions = new float[cellsTall+1];
-color black, white, brown, red, yellow;
 String level, moves, pushes;
 PFont buttonFont;
 PImage pic;
