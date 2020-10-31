@@ -28,22 +28,22 @@ void panel() {
 
 void panelClick() {
   panelPopulation();
-  if (restartTest == true) {
+  if (restartTest) {
     setupLevel();
     return;
   } 
-  if (nextTest == true) {
+  if (nextTest) {
     levelIndex++;
     setupLevel();
     return;
   }
-  if (lastTest == true) {
+  if (lastTest) {
     levelIndex--;
     setupLevel();
     return;
   }
-  if (swipeTest == true) {
-    if (swipe == true) {
+  if (swipeTest) {
+    if (swipe) {
       swipe = false;
       return;
     } else {
@@ -51,7 +51,7 @@ void panelClick() {
       return;
     }
   } 
-  if (quitTest == true) {
+  if (quitTest) {
     exit();
   }
 }

@@ -52,7 +52,7 @@ void winCheck() {
 }
 
 void win() {
-  if (mute == true) {
+  if (mute) {
   } else {
     song4.play();
     song4.rewind();

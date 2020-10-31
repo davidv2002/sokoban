@@ -85,7 +85,7 @@ class Logic {
     fill(colors[cellsWide*y+x]);
     rect(xPositions[x], yPositions[y], cellWidth, cellHeight);
     numPush++;
-    if (mute == true) {
+    if (mute) {
     } else {
       song3.play();
       song3.rewind();

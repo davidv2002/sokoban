@@ -45,7 +45,7 @@ void mousePressed() {
 }
 
 void onFlick(float xs, float ys, float px, float py, float v) {
-  if (swipe == true) {
+  if (swipe) {
     xDif = px - xs;
     yDif = py - ys;
     if (abs(xDif) > abs(yDif)) {

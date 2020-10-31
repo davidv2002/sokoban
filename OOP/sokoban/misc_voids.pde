@@ -55,7 +55,7 @@ void setupLevel() {
 }
 
 void song() {
-  if (mute == true) {
+  if (mute) {
     song1.loop();
     mute = false;
   } else {
@@ -66,7 +66,7 @@ void song() {
 }
 
 void wallSound() {
-  if (mute == true) {
+  if (mute) {
   } else {
     song2.play();
     song2.rewind();
