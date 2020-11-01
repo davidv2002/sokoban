@@ -31,7 +31,7 @@ void panelPopulation() {
 }
 
 void populationResize() {
-  gameHeight = height-width/8;
+  gameHeight = height-width/8.0;
   heightOffset = height-gameHeight;
   cellWidth = width/cellsWide;
   cellHeight = gameHeight/9;
