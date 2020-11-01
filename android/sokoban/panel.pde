@@ -3,11 +3,11 @@ void panel() {
   square(0, gameHeight, heightOffset);
   square(heightOffset, gameHeight, heightOffset);
   square(heightOffset*2, gameHeight, heightOffset);
-  square(width-heightOffset*3.5, gameHeight, heightOffset);
-  square(width-heightOffset*2.5, gameHeight, heightOffset/2);
-  square(width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2);
-  square(width-heightOffset*2, gameHeight, heightOffset);
-  square(width-heightOffset, gameHeight, heightOffset);
+  square(heightOffset*3, gameHeight, heightOffset);
+  square(heightOffset*4, gameHeight, heightOffset);
+  square(heightOffset*5, gameHeight, heightOffset);
+  square(heightOffset*6, gameHeight, heightOffset);
+  square(heightOffset*7, gameHeight, heightOffset);
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(buttonFont, height/20);
@@ -15,15 +15,14 @@ void panel() {
   text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
   text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
   if (swipe == true) {
-    text("Click Mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+    text("Click Mode", heightOffset*3, gameHeight, heightOffset, heightOffset);
   } else {
-    text("Swipe Mode", width-heightOffset*3.5, gameHeight, heightOffset, heightOffset);
+    text("Swipe Mode", heightOffset*3, gameHeight, heightOffset, heightOffset);
   }
-  text("Restart Level", width-heightOffset*2, gameHeight, heightOffset, heightOffset);
-  text("Quit Playing", width-heightOffset, gameHeight, heightOffset, heightOffset);
-  textFont(buttonFont, height/30);
-  text("Next Level", width-heightOffset*2.5, gameHeight, heightOffset/2, heightOffset/2);
-  text("Last Level", width-heightOffset*2.5, gameHeight+heightOffset/2, heightOffset/2, heightOffset/2);
+  text("Last Level", heightOffset*4, gameHeight, heightOffset, heightOffset);
+  text("Next Level", heightOffset*5, gameHeight, heightOffset, heightOffset);
+  text("Restart Level", heightOffset*6, gameHeight, heightOffset, heightOffset);
+  text("Quit Playing", heightOffset*7, gameHeight, heightOffset, heightOffset);
 }
 
 void panelClick() {

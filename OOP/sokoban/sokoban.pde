@@ -5,6 +5,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
+
 // global variables
 Minim minim;
 AudioPlayer song1;
@@ -18,8 +19,8 @@ Logic pushRight = new Logic(1, 0);
 Logic pushUp = new Logic(0, -1);
 Logic pushDown = new Logic(0, 1);
 
-int cellsWide = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow;
-float cellWidth, cellHeight, heightOffset, gameHeight;
+int cellsWide = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow, fontSize;
+float cellWidth, cellHeight, heightOffset, gameHeight, goalSize;
 int[] colors = new int[cellsWide*9];
 float[] xPositions = new float[cellsWide+1];
 float[] yPositions = new float[10];
@@ -31,13 +32,16 @@ boolean quitTest, restartTest, nextTest, lastTest, mute, muteTest;
 
 void setup() {
   size(1024, 768);
+  surface.setResizable(true);
   population();
   song();
   setupLevel();
 }
 
 void draw() {
+  populationResize();
   panalTextPopulation();
+  levelDraw();
   goals();
   panel();
 }

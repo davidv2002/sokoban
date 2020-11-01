@@ -4,7 +4,7 @@ void population() {
   brown = 0xFF796F48;
   yellow = 0xFFF9FC3B;
   white = 0xFFFFFFFF;
-  gameHeight = height*0.8;
+  gameHeight = height-width/8;
   heightOffset = height-gameHeight;
   pic = loadImage("1.jpg");
   buttonFont = createFont("Microsoft Sans Serif", 80);
@@ -27,9 +27,9 @@ void panelTextPopulation() {
 }
 
 void panelPopulation() {
-  quitTest = (pmouseX > width-heightOffset);
-  restartTest = (pmouseX > width-heightOffset*2 && pmouseX < width-heightOffset);
-  swipeTest = (pmouseX > width-heightOffset*3.5 && pmouseX < width-heightOffset*2.5);
-  nextTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY < gameHeight+heightOffset/2 && levelIndex != 9);
-  lastTest = (pmouseX > width-heightOffset*2.5 && pmouseX < width-heightOffset*2 && pmouseY > gameHeight+heightOffset/2 && levelIndex != 0);
+  quitTest = (pmouseX > heightOffset*7);
+  restartTest = (pmouseX > heightOffset*6 && pmouseX < heightOffset*7);
+  nextTest = (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9);
+  lastTest = (pmouseX > heightOffset*4 && pmouseX < heightOffset*5 && levelIndex != 0);
+  swipeTest = (pmouseX > heightOffset*3 && pmouseX < heightOffset*4);
 }

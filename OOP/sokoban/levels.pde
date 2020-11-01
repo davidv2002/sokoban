@@ -111,8 +111,8 @@ void level0() {
 }
 
 void goal0() {
-  circle(xPositions[1]+cellWidth/2, yPositions[1]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[1]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
 }
 
 void level1() {
@@ -144,7 +144,7 @@ void level1() {
 }
 
 void goal1() {
-  circle(xPositions[5]+cellWidth/2, yPositions[5]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[5]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
 }
 
 void level2() {
@@ -172,10 +172,10 @@ void level2() {
 }
 
 void goal2() {
-  circle(xPositions[4]+cellWidth/2, yPositions[1]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[6]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[4]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
+  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
 }
 
 void level3() {
@@ -217,9 +217,9 @@ void level3() {
 }
 
 void goal3() {
-  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[7]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[7]+cellWidth/2, yPositions[5]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[7]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[7]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
 }
 
 void level4() {
@@ -255,10 +255,10 @@ void level4() {
 }
 
 void goal4() {
-  circle(xPositions[3]+cellWidth/2, yPositions[1]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[5]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[3]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
+  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
 }
 
 void level5() {
@@ -290,8 +290,8 @@ void level5() {
 }
 
 void goal5() {
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
 }
 
 void level6() {
@@ -337,8 +337,8 @@ void level6() {
 }
 
 void goal6() {
-  circle(xPositions[6]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[6]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
 }
 
 void level7() {
@@ -368,8 +368,8 @@ void level7() {
 }
 
 void goal7() {
-  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
 }
 
 void level8() {
@@ -416,13 +416,13 @@ void level8() {
 }
 
 void goal8() {
-  circle(xPositions[1]+cellWidth/2, yPositions[2]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[6]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[6]+cellWidth/2, yPositions[6]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[7]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[1]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
+  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
+  circle(xPositions[6]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[7]+cellHeight/2, goalSize);
 }
 
 void level9() {
@@ -470,14 +470,14 @@ void level9() {
 }
 
 void goal9() {
-  circle(xPositions[2]+cellWidth/2, yPositions[2]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[2]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[2]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[6]+cellWidth/2, yPositions[2]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[2]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[3]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[4]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
-  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, cellWidth/2.5);
+  circle(xPositions[2]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
+  circle(xPositions[6]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
+  circle(xPositions[2]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[3]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[4]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
 }

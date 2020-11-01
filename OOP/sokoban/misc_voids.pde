@@ -38,6 +38,13 @@ void setupLevel() {
   default:
     exit();
   }
+  levelDraw();
+  // reset
+  numMoves = 0;
+  numPush = 0;
+}
+
+void levelDraw() {
   // draw the level
   image(pic, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
@@ -49,9 +56,6 @@ void setupLevel() {
       }
     }
   }
-  // reset
-  numMoves = 0;
-  numPush = 0;
 }
 
 void song() {
