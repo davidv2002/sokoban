@@ -1,3 +1,102 @@
+void setupLevel() {
+  // fill with black
+  for (int i = 0; i < colors.length; i++) 
+  {
+    colors[i] = 0xFF000000;
+  }
+  switch(levelIndex) {
+  case 0:
+    level0();
+    break;
+  case 1:
+    level1();
+    break;
+  case 2:
+    level2();
+    break;
+  case 3:
+    level3();
+    break;
+  case 4:
+    level4();
+    break;
+  case 5:
+    level5();
+    break;
+  case 6:
+    level6();
+    break;
+  case 7:
+    level7();
+    break;
+  case 8:
+    level8();
+    break;
+  case 9:
+    level9();
+    break;
+  default:
+    exit();
+  }
+  levelDraw();
+  // reset
+  moveNumber = 0;
+  pushNumber = 0;
+}
+
+void goals() {
+  fill(yellow);
+  stroke(yellow);
+  switch(levelIndex) {
+  case 0:
+    goal0();
+    break;
+  case 1:
+    goal1();
+    break;
+  case 2:
+    goal2();
+    break;
+  case 3:
+    goal3();
+    break;
+  case 4:
+    goal4();
+    break;
+  case 5:
+    goal5();
+    break;
+  case 6:
+    goal6();
+    break;
+  case 7:
+    goal7();
+    break;
+  case 8:
+    goal8();
+    break;
+  case 9:
+    goal9();
+  }
+  stroke(black);
+}
+
+void levelDraw() {
+  // draw the level
+  image(background, 0, 0, width, gameHeight);
+  for (int i = 0; i < cellsWide; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (colors[cellsWide*j+i] == 0xFF000000) {
+      } else {
+        fill(colors[cellsWide*j+i]);
+        stroke(colors[cellsWide*j+i]);
+        rect(xPositions[i], yPositions[j], boxWidth, boxHeight);
+      }
+    }
+  }
+  stroke(black);
+}
+
 void winCheck() {
   switch(levelIndex) {
   case 0:
@@ -51,55 +150,10 @@ void winCheck() {
   }
 }
 
-void win() {
-  if (mute) {
-  } else {
-    song4.play();
-    song4.rewind();
-  }
-  levelIndex++;
-  setupLevel();
-}
-
-void goals() {
-  fill(yellow);
-  switch(levelIndex) {
-  case 0:
-    goal0();
-    break;
-  case 1:
-    goal1();
-    break;
-  case 2:
-    goal2();
-    break;
-  case 3:
-    goal3();
-    break;
-  case 4:
-    goal4();
-    break;
-  case 5:
-    goal5();
-    break;
-  case 6:
-    goal6();
-    break;
-  case 7:
-    goal7();
-    break;
-  case 8:
-    goal8();
-    break;
-  case 9:
-    goal9();
-  }
-}
-
 void level0() {
   // player location
-  storedIndexX = 1;
-  storedIndexY = 3;
+  storedXIndex = 1;
+  storedYIndex = 3;
   // row 1 
   colors[cellsWide+1] = white; 
   // row 2
@@ -111,14 +165,14 @@ void level0() {
 }
 
 void goal0() {
-  circle(xPositions[1]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[1]+goalOffsetX, yPositions[1]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
 }
 
 void level1() {
   // player location
-  storedIndexX = 1;
-  storedIndexY = 1;
+  storedXIndex = 1;
+  storedYIndex = 1;
   // row 1
   colors[cellsWide+1] = red; 
   colors[cellsWide+2] = white;
@@ -144,13 +198,13 @@ void level1() {
 }
 
 void goal1() {
-  circle(xPositions[5]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
+  circle(xPositions[5]+goalOffsetX, yPositions[5]+goalOffsetY, goalDiameter);
 }
 
 void level2() {
   // player location
-  storedIndexX = 4;
-  storedIndexY = 4;
+  storedXIndex = 4;
+  storedYIndex = 4;
   // row 1
   colors[cellsWide+4] = white; 
   // row 2
@@ -172,16 +226,16 @@ void level2() {
 }
 
 void goal2() {
-  circle(xPositions[4]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
-  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
+  circle(xPositions[4]+goalOffsetX, yPositions[1]+goalOffsetY, goalDiameter);
+  circle(xPositions[7]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[1]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[6]+goalOffsetY, goalDiameter);
 }
 
 void level3() {
   // player location
-  storedIndexX = 1;
-  storedIndexY = 7;
+  storedXIndex = 1;
+  storedYIndex = 7;
   // row 1
   colors[cellsWide+2] = white;
   colors[cellsWide+3] = white;
@@ -217,15 +271,15 @@ void level3() {
 }
 
 void goal3() {
-  circle(xPositions[7]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[7]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
-  circle(xPositions[7]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
+  circle(xPositions[7]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[7]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
+  circle(xPositions[7]+goalOffsetX, yPositions[5]+goalOffsetY, goalDiameter);
 }
 
 void level4() {
   // player location
-  storedIndexX = 3;
-  storedIndexY = 1;
+  storedXIndex = 3;
+  storedYIndex = 1;
   // row 1
   colors[cellsWide+2] = white;
   colors[cellsWide+3] = red;  
@@ -255,16 +309,16 @@ void level4() {
 }
 
 void goal4() {
-  circle(xPositions[3]+cellWidth/2, yPositions[1]+cellHeight/2, goalSize);
-  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
+  circle(xPositions[3]+goalOffsetX, yPositions[1]+goalOffsetY, goalDiameter);
+  circle(xPositions[1]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[5]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[5]+goalOffsetY, goalDiameter);
 }
 
 void level5() {
   // player location
-  storedIndexX = 4;
-  storedIndexY = 1;
+  storedXIndex = 4;
+  storedYIndex = 1;
   // row 1
   colors[cellsWide+3] = white;
   colors[cellsWide+4] = red;
@@ -290,14 +344,14 @@ void level5() {
 }
 
 void goal5() {
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
+  circle(xPositions[3]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[5]+goalOffsetY, goalDiameter);
 }
 
 void level6() {
   // player location
-  storedIndexX = 7;
-  storedIndexY = 6;
+  storedXIndex = 7;
+  storedYIndex = 6;
   // row 1
   colors[cellsWide+5] = white;
   colors[cellsWide+6] = white;
@@ -337,14 +391,14 @@ void level6() {
 }
 
 void goal6() {
-  circle(xPositions[6]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[6]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[6]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
 }
 
 void level7() {
   // player location
-  storedIndexX = 5;
-  storedIndexY = 3;
+  storedXIndex = 5;
+  storedYIndex = 3;
   // row 1
   colors[cellsWide+1] = white;
   colors[cellsWide+2] = white;
@@ -368,14 +422,14 @@ void level7() {
 }
 
 void goal7() {
-  circle(xPositions[1]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
+  circle(xPositions[1]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
 }
 
 void level8() {
   // player location
-  storedIndexX = 2;
-  storedIndexY = 2;
+  storedXIndex = 2;
+  storedYIndex = 2;
   // row 1
   colors[cellsWide+3] = white;
   colors[cellsWide+4] = white;
@@ -416,19 +470,19 @@ void level8() {
 }
 
 void goal8() {
-  circle(xPositions[1]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
-  circle(xPositions[5]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[1]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[5]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
-  circle(xPositions[6]+cellWidth/2, yPositions[6]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[7]+cellHeight/2, goalSize);
+  circle(xPositions[1]+goalOffsetX, yPositions[2]+goalOffsetY, goalDiameter);
+  circle(xPositions[5]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[1]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[5]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[6]+goalOffsetY, goalDiameter);
+  circle(xPositions[6]+goalOffsetX, yPositions[6]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[7]+goalOffsetY, goalDiameter);
 }
 
 void level9() {
   // player location
-  storedIndexX = 3;
-  storedIndexY = 6;
+  storedXIndex = 3;
+  storedYIndex = 6;
   // row 1
   colors[cellsWide+1] = white;
   colors[cellsWide+2] = white;
@@ -461,7 +515,7 @@ void level9() {
   colors[cellsWide*5+2] = brown; 
   colors[cellsWide*5+3] = brown; 
   colors[cellsWide*5+4] = brown; 
-  colors[cellsWide*5+5] = brown; 
+  colors[cellsWide*5+5] = brown;
   colors[cellsWide*5+6] = white;
   // row 6
   colors[cellsWide*6+2] = white;
@@ -470,14 +524,14 @@ void level9() {
 }
 
 void goal9() {
-  circle(xPositions[2]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
-  circle(xPositions[6]+cellWidth/2, yPositions[2]+cellHeight/2, goalSize);
-  circle(xPositions[2]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[3]+cellHeight/2, goalSize);
-  circle(xPositions[3]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
-  circle(xPositions[4]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
-  circle(xPositions[6]+cellWidth/2, yPositions[4]+cellHeight/2, goalSize);
+  circle(xPositions[2]+goalOffsetX, yPositions[2]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[2]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[2]+goalOffsetY, goalDiameter);
+  circle(xPositions[6]+goalOffsetX, yPositions[2]+goalOffsetY, goalDiameter);
+  circle(xPositions[2]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[3]+goalOffsetY, goalDiameter);
+  circle(xPositions[3]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
+  circle(xPositions[4]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
+  circle(xPositions[6]+goalOffsetX, yPositions[4]+goalOffsetY, goalDiameter);
 }
