@@ -10,19 +10,20 @@ Logic pushRight = new Logic(1, 0);
 Logic pushUp = new Logic(0, -1);
 Logic pushDown = new Logic(0, 1);
 
-int cellsWide = 9, cellsTall = 9, levelIndex = 0, x, y, numMoves, numPush, storedIndexX, storedIndexY, black, white, brown, red, yellow;
-float cellWidth, cellHeight, heightOffset, gameHeight, xDif, yDif;
-int[] colors = new int[cellsWide*cellsTall];
-float[] xPositions = new float[cellsWide+1];
-float[] yPositions = new float[cellsTall+1];
+int boxesWide = 9, levelIndex = 0, X, Y, moveNumber, pushNumber, storedXIndex, storedYIndex, fontSize, black, white, brown, red, yellow;
+float boxWidth, boxHeight, heightOffset, gameHeight, xDif, yDif, goalOffsetX, goalOffsetY, goalDiameter;
+int[] colors = new int[boxesWide*9];
+float[] xPositions = new float[boxesWide+1];
+float[] yPositions = new float[10];
 String level, moves, pushes;
-PFont buttonFont;
-PImage pic;
+PFont font;
+PImage background;
 boolean quitTest, restartTest, nextTest, lastTest, swipeTest, swipe;
 
 void setup() {
   orientation(LANDSCAPE);
   gesture = new KetaiGesture(this);
+  textAlign(CENTER, CENTER);
   fullScreen();
   population();
   setupLevel();
@@ -30,6 +31,7 @@ void setup() {
 
 void draw() {
   panelTextPopulation();
+  levelDraw();
   goals();
   panel();
 }
@@ -51,25 +53,25 @@ void onFlick(float xs, float ys, float px, float py, float v) {
     if (abs(xDif) > abs(yDif)) {
       if (xDif > 0) {
         println("left");
-        x =storedIndexX-1;
-        y = storedIndexY;
+        X = storedXIndex-1;
+        Y = storedYIndex;
         dPadLogic();
       } else {
         println("right");
-        x =storedIndexX+1;
-        y = storedIndexY;
+        X = storedXIndex+1;
+        Y = storedYIndex;
         dPadLogic();
       }
     } else {
       if (yDif > 0) {
         println("up");
-        x =storedIndexX;
-        y = storedIndexY-1;
+        X = storedXIndex;
+        Y = storedYIndex-1;
         dPadLogic();
       } else {
         println("down");
-        x =storedIndexX;
-        y = storedIndexY+1;
+        X = storedXIndex;
+        Y = storedYIndex+1;
         dPadLogic();
       }
     }

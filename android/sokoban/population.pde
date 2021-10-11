@@ -4,26 +4,30 @@ void population() {
   brown = 0xFF796F48;
   yellow = 0xFFF9FC3B;
   white = 0xFFFFFFFF;
-  gameHeight = height-width/8;
+  gameHeight = height-width/8.0;
   heightOffset = height-gameHeight;
-  pic = loadImage("1.jpg");
-  buttonFont = createFont("Microsoft Sans Serif", 80);
+  background = loadImage("Background.jpg");
+  font = createFont("Microsoft Sans Serif", 80);
   swipe = false;
-  cellWidth = width/cellsWide;
-  cellHeight = gameHeight/cellsTall;
+  boxWidth = width/boxesWide*1.0;
+  boxHeight = gameHeight/9.0;
+  goalOffsetX = boxWidth/2;
+  goalOffsetY = boxHeight/2;
   for (int i = 0; i < xPositions.length; i++) {
-    xPositions[i] = width*((i*1.0)/cellsWide);
+    xPositions[i] = width*((i*1.0)/boxesWide);
   }
   for (int i = 0; i < yPositions.length; i++) {
-    yPositions[i] = gameHeight*((i*1.0)/cellsTall);
+    yPositions[i] = gameHeight*((i/9.0));
   }
   panelPopulation();
+  goalDiameter = boxHeight*0.75;
+  fontSize = height/30;
 }
 
 void panelTextPopulation() {
   level = "Level\n"+(levelIndex+1);
-  moves = "Moves\n"+numMoves;
-  pushes = "Pushes\n"+numPush;
+  moves = "Moves\n"+moveNumber;
+  pushes = "Pushes\n"+pushNumber;
 }
 
 void panelPopulation() {

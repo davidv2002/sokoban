@@ -15,4 +15,5 @@ void onCreate(Bundle bundle) {
     | View.SYSTEM_UI_FLAG_FULLSCREEN;
   decorView.setSystemUiVisibility(uiOptions);
 }
+
 // end of bit that i do not know about
