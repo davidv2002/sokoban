@@ -1,5 +1,5 @@
 void baseLogic() {
-  for (X = 0; X < cellsWide; X++) {
+  for (X = 0; X < (cellsWide); X++) {
     for (Y = 0; Y < 9; Y++) {
       if (pmouseX > xPositions[X] && pmouseY > yPositions[Y] && pmouseX < xPositions[X+1] && pmouseY < yPositions[Y+1] && abs(storedXIndex-X)+abs(storedYIndex-Y) == 1) {
         switch(colors[cellsWide*Y+X]) {
