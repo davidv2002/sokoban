@@ -13,10 +13,10 @@ void population() {
   effect1 = minim.loadFile("Push.mp3");
   effect2 = minim.loadFile("Win.mp3");
   sound = true;
-  panelPopulation();
+  panelTextPopulation();
 }
 
-void panalTextPopulation() {
+void panelTextPopulation() {
   level = "Level\n"+(levelIndex+1);
   moves = "Moves\n"+moveNumber;
   pushes = "Pushes\n"+pushNumber;
