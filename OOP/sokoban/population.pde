@@ -4,8 +4,12 @@ void population() {
   brown = 0xFF796F48;
   yellow = 0xFFF9FC3B;
   white = 0xFFFFFFFF;
+  cellsWide = 9;
   background = loadImage("Background.jpg");
   font = createFont("Microsoft Sans Serif", 80);
+  colors = new int[int(sq(cellsWide))];
+  xPositions = new float[cellsWide+1];
+  yPositions = new float[xPositions.length];
   populationResize();
   minim = new Minim(this);
   song0 = minim.loadFile("Beat_Your_Competition.mp3");
@@ -20,14 +24,6 @@ void panelTextPopulation() {
   level = "Level\n"+(levelIndex+1);
   moves = "Moves\n"+moveNumber;
   pushes = "Pushes\n"+pushNumber;
-}
-
-void panelPopulation() {
-  quitTest = (pmouseX > heightOffset*7);
-  restartTest = (pmouseX > heightOffset*6 && pmouseX < heightOffset*7);
-  nextTest = (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9);
-  lastTest = (pmouseX > heightOffset*4 && pmouseX < heightOffset*5 && levelIndex != 0);
-  soundTest = (pmouseX > heightOffset*3 && pmouseX < heightOffset*4);
 }
 
 void populationResize() {

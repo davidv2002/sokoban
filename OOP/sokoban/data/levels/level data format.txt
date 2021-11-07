@@ -1,0 +1,14 @@
+hex 00 to hex 50 is the level data in left to right, top to bottom order
+00 is a blank square, a wall
+01 is a white square, an empty space
+02 is a brown square, a box
+03 is a red square, the player
+bytes 51 and 52 are the x and y indexes respectively
+x in squares to the left of it 
+y in squares above it
+
+note with your hex editor set to 9 bytes per row the following rows and columns must be all 00 bytes or the code will break
+column 00 other then byte 51
+column 08
+row 00
+row 48

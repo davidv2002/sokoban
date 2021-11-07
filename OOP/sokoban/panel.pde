@@ -31,7 +31,7 @@ void panel() {
 }
 
 void panelClick() {
-  panelPopulation();
+  panelTests();
   if (restartTest && moveNumber > 0) {
     setupLevel();
     return;

@@ -105,9 +105,3 @@ class Logic {
     moveNumber++;
   }
 }
-
-void win() {
-  winSound();
-  levelIndex++;
-  setupLevel();
-}
