@@ -98,7 +98,7 @@ class Logic {
     fill(colors[cellsWide*Y+X]);
     stroke(colors[cellsWide*Y+X]);
     rect(xPositions[X], yPositions[Y], boxWidth, boxHeight);
-    stroke(black);
+    goals();
     // update indexes
     storedXIndex = X;
     storedYIndex = Y;

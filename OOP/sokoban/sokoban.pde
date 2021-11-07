@@ -1,18 +1,3 @@
-// library imports
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
-
-// sound setup
-Minim minim;
-AudioPlayer song0;
-AudioPlayer effect0;
-AudioPlayer effect1;
-AudioPlayer effect2;
-
 // object definitions
 Logic swap = new Logic(0, 0);
 Logic pushLeft = new Logic(-1, 0);
@@ -22,8 +7,8 @@ Logic pushDown = new Logic(0, 1);
 
 // global variables
 int cellsWide, levelIndex, X, Y, moveNumber, pushNumber, storedXIndex, storedYIndex, black, white, brown, red, yellow, fontSize, resizeSkip;
-float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, goalOffsetY;
 int[] colors;
+float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, goalOffsetY;
 float[] xPositions;
 float[] yPositions;
 byte data[];
@@ -44,13 +29,13 @@ void setup() {
 void draw() {
   if (resizeSkip == 0) {
     populationResize();
-    levelDraw();
+    drawLevel();
     resizeSkip = 4;
   } else {
     resizeSkip--;
   }
+  println(frameRate);
   panelTextPopulation();
-  goals();
   panel();
 }
 
@@ -109,7 +94,7 @@ void keyPressed() {
     break;
   case 82:
     if (moveNumber > 0) {
-      setupLevel();
+      load();
     }
     break;
   case 27:

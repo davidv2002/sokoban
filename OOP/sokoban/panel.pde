@@ -30,10 +30,24 @@ void panel() {
   text("Quit\n Playing", heightOffset*7, gameHeight, heightOffset, heightOffset);
 }
 
+void panelTextPopulation() {
+  level = "Level\n"+(levelIndex+1);
+  moves = "Moves\n"+moveNumber;
+  pushes = "Pushes\n"+pushNumber;
+}
+
+void panelTests() {
+  quitTest = (pmouseX > heightOffset*7);
+  restartTest = (pmouseX > heightOffset*6 && pmouseX < heightOffset*7);
+  nextTest = (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9);
+  lastTest = (pmouseX > heightOffset*4 && pmouseX < heightOffset*5 && levelIndex != 0);
+  soundTest = (pmouseX > heightOffset*3 && pmouseX < heightOffset*4);
+}
+
 void panelClick() {
   panelTests();
   if (restartTest && moveNumber > 0) {
-    setupLevel();
+    load();
     return;
   } 
   if (nextTest) {
