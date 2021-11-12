@@ -15,7 +15,7 @@ byte data[];
 String level, moves, pushes;
 PFont font;
 PImage background;
-boolean quitTest, restartTest, nextTest, lastTest, sound, soundTest;
+boolean quitTest, restartTest, nextTest, lastTest, sound, soundTest, winAnd;
 
 void setup() {
   size(1024, 768);
@@ -34,7 +34,6 @@ void draw() {
   } else {
     resizeSkip--;
   }
-  println(frameRate);
   panelTextPopulation();
   panel();
 }
