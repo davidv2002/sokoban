@@ -12,7 +12,7 @@ void winCheck() {
   for (int i = 0; i < levelData[81]; i++) {
     winAnd = (colors[(cellsWide*levelData[83+(i*2)])+levelData[82+(i*2)]] == brown && winAnd);
   }
-  if (winAnd == true) {
+  if (winAnd) {
     win();
   }
 }
