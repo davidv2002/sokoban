@@ -1,34 +1,34 @@
 void setupLevel() {
   switch(levelIndex) {
   case 0:
-    data = loadBytes("levels/level0.dat");
+    levelData = loadBytes("levels/level0.dat");
     break;
   case 1:
-    data = loadBytes("levels/level1.dat");
+    levelData = loadBytes("levels/level1.dat");
     break;
   case 2:
-    data = loadBytes("levels/level2.dat");
+    levelData = loadBytes("levels/level2.dat");
     break;
   case 3:
-    data = loadBytes("levels/level3.dat");
+    levelData = loadBytes("levels/level3.dat");
     break;
   case 4:
-    data = loadBytes("levels/level4.dat");
+    levelData = loadBytes("levels/level4.dat");
     break;
   case 5:
-    data = loadBytes("levels/level5.dat");
+    levelData = loadBytes("levels/level5.dat");
     break;
   case 6:
-    data = loadBytes("levels/level6.dat");
+    levelData = loadBytes("levels/level6.dat");
     break;
   case 7:
-    data = loadBytes("levels/level7.dat");
+    levelData = loadBytes("levels/level7.dat");
     break;
   case 8:
-    data = loadBytes("levels/level8.dat");
+    levelData = loadBytes("levels/level8.dat");
     break;
   case 9:
-    data = loadBytes("levels/level9.dat");
+    levelData = loadBytes("levels/level9.dat");
     break;
   default:
     exit();
@@ -39,7 +39,7 @@ void setupLevel() {
 void load() {
   for (int i = 0; i < colors.length; i++) 
   {
-    switch(data[i]) {
+    switch(levelData[i]) {
     case 0:
       colors[i] = black;
       break;
@@ -51,10 +51,10 @@ void load() {
       break;
     case 3:
       colors[i] = red;
+      storedXIndex = i % 9;
+      storedYIndex = floor(i/9);
     }
   }
-  storedXIndex = data[81];
-  storedYIndex = data[82];
   drawLevel();
   // reset
   moveNumber = 0;

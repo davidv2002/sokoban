@@ -11,7 +11,7 @@ int[] colors;
 float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, goalOffsetY;
 float[] xPositions;
 float[] yPositions;
-byte data[];
+byte levelData[];
 String level, moves, pushes;
 PFont font;
 PImage background;

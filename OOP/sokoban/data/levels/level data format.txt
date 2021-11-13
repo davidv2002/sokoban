@@ -3,10 +3,9 @@ hex 00 to hex 50 is the level data in left to right, top to bottom order
 01 is a white square, an empty space
 02 is a brown square, a box
 03 is a red square, the player
-bytes 51 and 52 are the x and y indexes of the player respectively
+byte 51 is the number of goals in the level then each following pair of bytes are the x and y location of the goal in format below
 x in squares to the left of it 
 y in squares above it
-byte 53 is the number of goals in the level then each following pair of bytes are the x and y location of the goal in the same format as the indexes above
 
 note with your hex editor set to 9 bytes per row the following rows and columns must be all 00 bytes or the code will break
 column 00 upto row 48
