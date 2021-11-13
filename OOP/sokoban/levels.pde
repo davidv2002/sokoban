@@ -57,8 +57,7 @@ void load() {
   }
   drawLevel();
   // reset
-  moveNumber = 0;
-  pushNumber = 0;
+  moveNumber = pushNumber = 0;
 }
 
 void drawLevel() {
