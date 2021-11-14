@@ -12,7 +12,6 @@ float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, 
 float[] xPositions;
 float[] yPositions;
 byte levelData[];
-String level, moves, pushes;
 PFont font;
 PImage background;
 boolean sound, winAnd;

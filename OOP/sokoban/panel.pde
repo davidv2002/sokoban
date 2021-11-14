@@ -1,19 +1,13 @@
 void panel() {
-  panelTextPopulation();
   fill(white);
-  square(0, gameHeight, heightOffset);
-  square(heightOffset, gameHeight, heightOffset);
-  square(heightOffset*2, gameHeight, heightOffset);
-  square(heightOffset*3, gameHeight, heightOffset);
-  square(heightOffset*4, gameHeight, heightOffset);
-  square(heightOffset*5, gameHeight, heightOffset);
-  square(heightOffset*6, gameHeight, heightOffset);
-  square(heightOffset*7, gameHeight, heightOffset);
+  for (int i = 0; i < 8; i++) {
+    square(heightOffset*i, gameHeight, heightOffset);
+  }
   fill(black);
   textFont(font, fontSize);
-  text(level, 0, gameHeight, heightOffset, heightOffset);
-  text(moves, heightOffset, gameHeight, heightOffset, heightOffset);
-  text(pushes, heightOffset*2, gameHeight, heightOffset, heightOffset);
+  text("Level\n"+(levelIndex+1), 0, gameHeight, heightOffset, heightOffset);
+  text("Moves\n"+moveNumber, heightOffset, gameHeight, heightOffset, heightOffset);
+  text("Pushes\n"+pushNumber, heightOffset*2, gameHeight, heightOffset, heightOffset);
   if (sound) {
     text("Mute", heightOffset*3, gameHeight, heightOffset, heightOffset);
   } else {
@@ -29,12 +23,6 @@ void panel() {
     text("Restart\n Level", heightOffset*6, gameHeight, heightOffset, heightOffset);
   }
   text("Quit\n Playing", heightOffset*7, gameHeight, heightOffset, heightOffset);
-}
-
-void panelTextPopulation() {
-  level = "Level\n"+(levelIndex+1);
-  moves = "Moves\n"+moveNumber;
-  pushes = "Pushes\n"+pushNumber;
 }
 
 void panelClick() {
