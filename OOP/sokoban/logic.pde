@@ -35,13 +35,13 @@ void dPadLogic() {
 void pushDirection() {
   if (storedYIndex == Y) {
     if (storedXIndex-X > 0) {
-      if (colors[cellsWide*Y+(X-1)] == 0xFFFFFFFF) {
+      if (colors[cellsWide*Y+(X-1)] == white) {
         pushLeft.push();
       } else {
         wallSound();
       }
     } else {
-      if (colors[cellsWide*Y+X+1] == 0xFFFFFFFF) {
+      if (colors[cellsWide*Y+X+1] == white) {
         pushRight.push();
       } else {
         wallSound();
@@ -49,13 +49,13 @@ void pushDirection() {
     }
   } else {
     if (storedYIndex-Y > 0) {
-      if (colors[cellsWide*(Y-1)+X] == 0xFFFFFFFF) {
+      if (colors[cellsWide*(Y-1)+X] == white) {
         pushUp.push();
       } else {
         wallSound();
       }
     } else {
-      if (colors[cellsWide*(Y+1)+X] == 0xFFFFFFFF) {
+      if (colors[cellsWide*(Y+1)+X] == white) {
         pushDown.push();
       } else {
         wallSound();

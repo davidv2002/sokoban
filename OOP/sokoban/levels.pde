@@ -65,7 +65,7 @@ void drawLevel() {
   image(background, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
     for (int j = 0; j < 9; j++) {
-      if (colors[cellsWide*j+i] == 0xFF000000) {
+      if (colors[cellsWide*j+i] == black) {
       } else {
         fill(colors[cellsWide*j+i]);
         stroke(colors[cellsWide*j+i]);
