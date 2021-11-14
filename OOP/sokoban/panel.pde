@@ -37,35 +37,26 @@ void panelTextPopulation() {
   pushes = "Pushes\n"+pushNumber;
 }
 
-void panelTests() {
-  quitTest = (pmouseX > heightOffset*7);
-  restartTest = (pmouseX > heightOffset*6 && pmouseX < heightOffset*7);
-  nextTest = (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9);
-  lastTest = (pmouseX > heightOffset*4 && pmouseX < heightOffset*5 && levelIndex != 0);
-  soundTest = (pmouseX > heightOffset*3 && pmouseX < heightOffset*4);
-}
-
 void panelClick() {
-  panelTests();
-  if (restartTest && moveNumber > 0) {
+  if (pmouseX > heightOffset*6 && pmouseX < heightOffset*7 && moveNumber > 0) {
     load();
     return;
   } 
-  if (nextTest) {
+  if (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9) {
     levelIndex++;
     setupLevel();
     return;
   } 
-  if (lastTest) {
+  if (pmouseX > heightOffset*4 && pmouseX < heightOffset*5 && levelIndex != 0) {
     levelIndex--;
     setupLevel();
     return;
   } 
-  if (soundTest) {
+  if (pmouseX > heightOffset*3 && pmouseX < heightOffset*4) {
     song();
     return;
   }
-  if (quitTest) {
+  if (pmouseX > heightOffset*7) {
     exit();
   }
 }

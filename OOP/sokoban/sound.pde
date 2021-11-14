@@ -13,7 +13,6 @@ AudioPlayer effect0;
 AudioPlayer effect1;
 AudioPlayer effect2;
 
-
 void popSound() {
   minim = new Minim(this);
   song0 = minim.loadFile("sound/Beat_Your_Competition.mp3");

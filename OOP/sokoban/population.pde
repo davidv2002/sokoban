@@ -12,7 +12,6 @@ void population() {
   yPositions = new float[xPositions.length];
   populationResize();
   popSound();
-  panelTextPopulation();
 }
 
 void populationResize() {

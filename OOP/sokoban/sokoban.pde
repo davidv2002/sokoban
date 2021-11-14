@@ -15,7 +15,7 @@ byte levelData[];
 String level, moves, pushes;
 PFont font;
 PImage background;
-boolean quitTest, restartTest, nextTest, lastTest, sound, soundTest, winAnd;
+boolean sound, winAnd;
 
 void setup() {
   size(1024, 768);
