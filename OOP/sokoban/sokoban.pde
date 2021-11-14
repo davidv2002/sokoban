@@ -7,14 +7,14 @@ Logic pushDown = new Logic(0, 1);
 
 // global variables
 int cellsWide, levelIndex, X, Y, moveNumber, pushNumber, storedXIndex, storedYIndex, black, white, brown, red, yellow, fontSize, oldWidth, oldHeight;
-int[] colors;
 float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, goalOffsetY;
-float[] xPositions;
-float[] yPositions;
-byte levelData[];
 PFont font;
 PImage background;
 boolean sound, winAnd;
+float[] xPositions;
+float[] yPositions;
+int[] colors;
+byte levelData[];
 
 void setup() {
   size(1024, 768);
@@ -26,7 +26,13 @@ void setup() {
 }
 
 void draw() {
-  registerCheck();
+  //MOS 8563 style interrupt
+  if (oldWidth != width || oldHeight != height) {
+    oldWidth = width;
+    oldHeight = height;
+    populationResize();
+    drawLevel();
+  }
 }
 
 void mousePressed() {
@@ -89,14 +95,5 @@ void keyPressed() {
     break;
   case 27:
     exit();
-  }
-}
-
-void registerCheck() {
-  if (oldWidth != width || oldHeight != height) {
-    oldWidth = width;
-    oldHeight = height;
-    populationResize();
-    drawLevel();
   }
 }
