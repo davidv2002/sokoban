@@ -6,7 +6,7 @@ Logic pushUp = new Logic(0, -1);
 Logic pushDown = new Logic(0, 1);
 
 // global variables
-int cellsWide, levelIndex, X, Y, moveNumber, pushNumber, storedXIndex, storedYIndex, black, white, brown, red, yellow, fontSize, resizeSkip;
+int cellsWide, levelIndex, X, Y, moveNumber, pushNumber, storedXIndex, storedYIndex, black, white, brown, red, yellow, fontSize, oldWidth, oldHeight;
 int[] colors;
 float boxWidth, boxHeight, heightOffset, gameHeight, goalDiameter, goalOffsetX, goalOffsetY;
 float[] xPositions;
@@ -27,13 +27,7 @@ void setup() {
 }
 
 void draw() {
-  if (resizeSkip == 0) {
-    populationResize();
-    drawLevel();
-    resizeSkip = 4;
-  } else {
-    resizeSkip--;
-  }
+  registerCheck();
   panelTextPopulation();
   panel();
 }

@@ -105,3 +105,12 @@ class Logic {
     moveNumber++;
   }
 }
+
+void registerCheck() {
+  if (oldWidth != width || oldHeight != height) {
+    oldWidth = width;
+    oldHeight = height;
+    populationResize();
+    drawLevel();
+  }
+}
