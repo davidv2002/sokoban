@@ -28,8 +28,6 @@ void setup() {
 
 void draw() {
   registerCheck();
-  panelTextPopulation();
-  panel();
 }
 
 void mousePressed() {

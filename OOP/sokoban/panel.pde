@@ -1,4 +1,5 @@
 void panel() {
+  panelTextPopulation();
   fill(white);
   square(0, gameHeight, heightOffset);
   square(heightOffset, gameHeight, heightOffset);

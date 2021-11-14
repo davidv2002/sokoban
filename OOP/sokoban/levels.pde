@@ -55,9 +55,9 @@ void load() {
       storedYIndex = floor(i/9);
     }
   }
-  drawLevel();
   // reset
   moveNumber = pushNumber = 0;
+  drawLevel();
 }
 
 void drawLevel() {
@@ -74,4 +74,5 @@ void drawLevel() {
     }
   }
   goals();
+  panel();
 }

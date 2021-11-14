@@ -103,5 +103,6 @@ class Logic {
     storedXIndex = X;
     storedYIndex = Y;
     moveNumber++;
+    panel();
   }
 }
