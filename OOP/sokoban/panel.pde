@@ -16,7 +16,7 @@ void panel() {
   if (levelIndex != 0) {
     text("Last\n Level", heightOffset*4, gameHeight, heightOffset, heightOffset);
   }
-  if (levelIndex != 9) {
+  if (levelIndex < dataOffsets.length-1) {
     text("Next\n Level", heightOffset*5, gameHeight, heightOffset, heightOffset);
   }
   if (moveNumber > 0) {
@@ -27,10 +27,10 @@ void panel() {
 
 void panelClick() {
   if (pmouseX > heightOffset*6 && pmouseX < heightOffset*7 && moveNumber > 0) {
-    load();
+    setupLevel();
     return;
   } 
-  if (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex != 9) {
+  if (pmouseX > heightOffset*5 && pmouseX < heightOffset*6 && levelIndex < dataOffsets.length-1) {
     levelIndex++;
     setupLevel();
     return;

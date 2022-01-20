@@ -14,7 +14,8 @@ boolean sound, winAnd;
 float[] xPositions;
 float[] yPositions;
 int[] colors;
-byte levelData[];
+int[] dataOffsets;
+byte[] levelData;
 
 void setup() {
   size(1024, 768);
@@ -90,7 +91,7 @@ void keyPressed() {
     break;
   case 82:
     if (moveNumber > 0) {
-      load();
+      setupLevel();
     }
     break;
   case 27:

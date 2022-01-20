@@ -11,7 +11,17 @@ void population() {
   xPositions = new float[cellsWide+1];
   yPositions = new float[xPositions.length];
   populationResize();
+  dataLoad();
   popSound();
+}
+void dataLoad() {
+  levelData = loadBytes("levels/levels.dat");
+  dataOffsets = new int[0];
+  for (int i = 0; i < levelData.length; i++) {
+    if (levelData[i] == -1) {
+      dataOffsets = append(dataOffsets, i);
+    }
+  }
 }
 
 void populationResize() {

@@ -8,7 +8,12 @@ x in squares to the left of it
 y in squares above it
 
 note with your hex editor set to 9 bytes per row the following rows and columns must be all 00 bytes or the code will break
-column 00 upto row 48
-column 08 upto row 48
+column 00 down to row 48
+column 08 down to row 48
 row 00
 row 48
+the only exeption is the byte hex 00 which must be ff or the code will break
+
+once the level is in this format copy it into the file levels.dat with the levels in the order that you want to play them in.
+
+levelExample.dat is a properly formatted level
