@@ -1,18 +1,24 @@
 void setupLevel() {
+  // reads from the level data array and loads the color data for the play field
   for (int i = 0; i < colors.length; i++) 
   {
     switch(levelData[i+dataOffsets[levelIndex]]) {
+      // empty
     case 1:
       colors[i] = white;
       break;
+      // box
     case 2:
       colors[i] = brown;
       break;
+      // player
     case 3:
       colors[i] = red;
-      storedXIndex = i % 9;
-      storedYIndex = floor(i/9);
+      // calculates the 2D player location from the 1D array
+      storedXIndex = i % cellsWide;
+      storedYIndex = floor(i/cellsWide);
       break;
+      // wall
     default:
       colors[i] = black;
     }
@@ -26,7 +32,7 @@ void drawLevel() {
   // draw the level
   image(background, 0, 0, width, gameHeight);
   for (int i = 0; i < cellsWide; i++) {
-    for (int j = 0; j < 9; j++) {
+    for (int j = 0; j < cellsWide; j++) {
       if (colors[cellsWide*j+i] == black) {
       } else {
         fill(colors[cellsWide*j+i]);

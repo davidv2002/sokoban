@@ -31,7 +31,7 @@ void draw() {
   if (oldWidth != width || oldHeight != height) {
     oldWidth = width;
     oldHeight = height;
-    populationResize();
+    popResize();
     drawLevel();
   }
 }
@@ -46,54 +46,59 @@ void mousePressed() {
 
 void keyPressed() {
   switch(keyCode) {
+    // start of dPad
   case UP:
     X = storedXIndex;
     Y = storedYIndex-1;
-    dPadLogic();
+    logicSwitch();
     break;
   case DOWN:
     X = storedXIndex;
     Y = storedYIndex+1;
-    dPadLogic();
+    logicSwitch();
     break;
   case LEFT:
     X = storedXIndex-1;
     Y = storedYIndex;
-    dPadLogic();
+    logicSwitch();
     break;
   case RIGHT:
     X = storedXIndex+1;
     Y = storedYIndex;
-    dPadLogic();
+    logicSwitch();
     break;
   case 87:
     X = storedXIndex;
     Y = storedYIndex-1;
-    dPadLogic();
+    logicSwitch();
     break;
   case 83:
     X = storedXIndex;
     Y = storedYIndex+1;
-    dPadLogic();
+    logicSwitch();
     break;
   case 66:
     X = storedXIndex-1;
     Y = storedYIndex;
-    dPadLogic();
+    logicSwitch();
     break;
+    // end of dPad
   case 68:
     X = storedXIndex+1;
     Y = storedYIndex;
-    dPadLogic();
+    logicSwitch();
     break;
+    // mute
   case 77:
     song();
     break;
+    // restart
   case 82:
     if (moveNumber > 0) {
       setupLevel();
     }
     break;
+    // quit
   case 27:
     exit();
   }

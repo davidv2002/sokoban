@@ -1,37 +1,33 @@
 void baseLogic() {
   for (X = 0; X < (cellsWide); X++) {
     for (Y = 0; Y < 9; Y++) {
+      // is the clicked cell one of the cell right next to the player
       if (pmouseX > xPositions[X] && pmouseY > yPositions[Y] && pmouseX < xPositions[X+1] && pmouseY < yPositions[Y+1] && abs(storedXIndex-X)+abs(storedYIndex-Y) == 1) {
-        switch(colors[cellsWide*Y+X]) {
-        case 0xFF000000: 
-          wallSound();
-          break;
-        case 0xFF796F48: 
-          pushDirection();
-          winCheck();
-          break;
-        default:
-          swap.swap();
-        }
+        logicSwitch();
       }
     }
   }
 }
 
-void dPadLogic() {
+// what type of cell was clicked
+void logicSwitch() {
   switch(colors[cellsWide*Y+X]) {
+    // wall
   case 0xFF000000: 
     wallSound();
     break;
+    // box
   case 0xFF796F48: 
     pushDirection();
     winCheck();
     break;
+    // empty
   default:
     swap.swap();
   }
 }
 
+// what direction are you trying to push the box in and is the box blocked by a wall
 void pushDirection() {
   if (storedYIndex == Y) {
     if (storedXIndex-X > 0) {

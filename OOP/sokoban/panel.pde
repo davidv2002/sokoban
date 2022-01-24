@@ -1,5 +1,6 @@
 void panel() {
   fill(white);
+  // draw the squares for the interface
   for (int i = 0; i < 8; i++) {
     square(heightOffset*i, gameHeight, heightOffset);
   }
