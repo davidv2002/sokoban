@@ -1,0 +1,19 @@
+hex 00 to hex 50 is the level data in left to right, top to bottom order
+00 is a blank square, a wall
+01 is a white square, an empty space
+02 is a brown square, a box
+03 is a red square, the player
+byte 51 is the number of goals in the level then each following pair of bytes are the x and y location of the goal in format below
+x in squares to the left of it 
+y in squares above it
+
+note with your hex editor set to 9 bytes per row the following rows and columns must be all 00 bytes or the code will break
+column 00 down to row 48
+column 08 down to row 48
+row 00
+row 48
+the only exeption is the byte hex 00 which must be ff or the code will break
+
+once the level is in this format copy it into the file levels.dat with the levels in the order that you want to play them in.
+
+levelExample.dat is a properly formatted level
